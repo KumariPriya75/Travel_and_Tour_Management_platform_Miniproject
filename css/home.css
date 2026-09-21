@@ -1,0 +1,126 @@
+/* =========================================================
+   HOME.CSS
+   -----------------------------------------------------------
+   Styles that are ONLY used on index.html (the Home page).
+   This file is loaded AFTER Bootstrap and common.css, so it
+   can add the final touches on top of them.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. HERO SECTION (the big introduction at the top)
+--------------------------------------------------------- */
+.hero-section {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+/* The main hero photo. We round its corners and make sure
+   the image always fills the box neatly without stretching. */
+.hero-image img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;   /* crops the image so it fills the box neatly */
+  border-radius: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   2. TRAVEL SEARCH BOX
+   (Destination, Travel Date, Travellers, Search button)
+   This sits in a simple white card below the hero image.
+--------------------------------------------------------- */
+.search-card {
+  background-color: #ffffff;
+  border: 1px solid #e2ddd0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.search-card label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #51615d;
+}
+
+
+/* ---------------------------------------------------------
+   3. POPULAR DESTINATIONS + FEATURED PACKAGES (image cards)
+   All photos in these cards are forced to the same height so
+   the cards line up neatly in a row.
+--------------------------------------------------------- */
+.destination-card img,
+.package-card img {
+  height: 170px;
+  object-fit: cover;
+}
+
+/* The price text shown under each featured package */
+.package-price {
+  font-weight: 700;
+  color: #0e4749;
+  font-size: 1.05rem;
+}
+
+
+/* ---------------------------------------------------------
+   4. TRAVEL CATEGORIES (Adventure, Family, Heritage...)
+--------------------------------------------------------- */
+.category-card {
+  text-align: center;
+  padding: 24px 10px;
+}
+
+/* The small circle behind each category icon */
+.category-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #fff2de;   /* light gold circle */
+  color: #0e4749;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.category-card:hover {
+  border-color: #e9a23b;   /* gold border appears on hover */
+}
+
+
+/* ---------------------------------------------------------
+   5. WHY CHOOSE US
+--------------------------------------------------------- */
+.why-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0e4749;  /* dark teal circle */
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   6. CUSTOMER REVIEWS
+--------------------------------------------------------- */
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;   /* makes the small photo round */
+}
+
+
+/* ---------------------------------------------------------
+   7. CALL TO ACTION BANNER (near the bottom of the page)
+--------------------------------------------------------- */
+.cta-banner {
+  border-radius: 16px;
+}

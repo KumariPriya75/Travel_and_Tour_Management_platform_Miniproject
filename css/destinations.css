@@ -1,0 +1,90 @@
+/* =========================================================
+   DESTINATIONS.CSS
+   -----------------------------------------------------------
+   Styles that are ONLY used on destinations.html.
+   Loaded after Bootstrap and common.css.
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. PAGE HEADER BANNER (top of the page)
+--------------------------------------------------------- */
+.page-header {
+  background-color: #0e4749;  /* deep teal, same as our footer */
+  padding: 56px 0;
+}
+
+
+/* ---------------------------------------------------------
+   2. SEARCH + FILTER BOX
+   A simple white card holding the search bar and the
+   category filter buttons.
+--------------------------------------------------------- */
+.filter-card {
+  background-color: #ffffff;
+  border: 1px solid #e2ddd0;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+/* Note: these filter buttons (All / Adventure / Family / ...)
+   are for browsing only. This project has no JavaScript, so
+   clicking a button does not hide or show cards - it is just
+   a visual way to group destinations by category. */
+
+
+/* ---------------------------------------------------------
+   3. DESTINATION CARDS
+   All destination photos are forced to the same height so
+   the cards line up neatly in a row.
+--------------------------------------------------------- */
+.dest-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* The small colored label showing the category, e.g. "Beach" */
+.category-label {
+  display: inline-block;
+  background-color: #fff2de;
+  color: #0e4749;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 999px;   /* fully rounded, pill shape */
+  margin-bottom: 8px;
+}
+
+
+/* ---------------------------------------------------------
+   4. FEATURED DESTINATION (highlighted banner)
+--------------------------------------------------------- */
+.featured-destination img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.featured-destination .content-box {
+  padding: 30px;
+}
+
+.featured-label {
+  color: #c97f1f;   /* darker gold text */
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+
+/* ---------------------------------------------------------
+   5. TRAVEL INSPIRATION (small blog-style article cards)
+--------------------------------------------------------- */
+.inspiration-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}

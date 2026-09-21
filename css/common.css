@@ -1,0 +1,185 @@
+/* =========================================================
+   COMMON.CSS
+   -----------------------------------------------------------
+   This file has the styles that are used on EVERY page of the
+   website (the navbar at the top and the footer at the bottom),
+   plus a few button styles we reuse again and again.
+
+   Bootstrap (loaded in the HTML <head>) already gives us the
+   grid system, the basic navbar behaviour, and the card shape.
+   This file just changes the COLORS and FONTS so the site does
+   not look like a plain default Bootstrap page.
+
+   Every page loads the files in this order:
+   1. Bootstrap CSS      (from the internet / CDN)
+   2. Bootstrap Icons     (from the internet / CDN)
+   3. common.css          (this file)
+   4. home.css OR destinations.css (only the styles for that one page)
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1. BASIC PAGE STYLE
+   We set one background color and one text color for the
+   whole website here, so we don't have to repeat it on
+   every page.
+--------------------------------------------------------- */
+body {
+  font-family: Arial, "Segoe UI", sans-serif;  /* normal, easy to read font */
+  background-color: #f6f3ec;   /* warm, light cream background */
+  color: #1e2a28;               /* dark green-black text color */
+}
+
+/* Headings (h1, h2, h3...) get a slightly different look */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;   /* semi-bold, a bit thicker than normal text */
+}
+
+
+/* ---------------------------------------------------------
+   2. BUTTON COLORS
+   Bootstrap gives us buttons already (the "btn" class), but
+   its default color is blue. We add two of our own button
+   colors here: a gold/orange one and a dark teal one.
+--------------------------------------------------------- */
+
+/* Gold button - used for "Search" and "Join" buttons */
+.btn-brand {
+  background-color: #e9a23b;  /* gold/orange */
+  border-color: #e9a23b;
+  color: #1e2a28;              /* dark text so it stays readable */
+  font-weight: 600;
+}
+
+.btn-brand:hover {
+  background-color: #c97f1f;  /* darker gold when the mouse hovers over it */
+  border-color: #c97f1f;
+}
+
+/* Dark teal button - used for "View Details" / "Explore Tours" */
+.btn-brand-dark {
+  background-color: #0e4749;  /* deep teal */
+  border-color: #0e4749;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-brand-dark:hover {
+  background-color: #16666b;  /* slightly lighter teal on hover */
+  border-color: #16666b;
+}
+
+
+/* ---------------------------------------------------------
+   3. NAVBAR (top menu bar)
+   Bootstrap already makes the navbar responsive and gives us
+   the mobile hamburger button (☰) automatically. We only
+   change its colors here.
+--------------------------------------------------------- */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2ddd0;  /* thin line under the navbar */
+}
+
+/* The website name/logo text, top-left of the navbar */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #0e4749;   /* deep teal */
+}
+
+/* The little dot after the logo name is gold */
+.navbar-brand span {
+  color: #e9a23b;
+}
+
+/* The menu links: Home, Destinations, Tours, About Us, Contact */
+.nav-link {
+  font-weight: 500;
+  color: #1e2a28;
+}
+
+/* The link for the page you are currently on gets a small
+   gold underline so users know where they are. */
+.nav-link.active {
+  color: #0e4749;
+  border-bottom: 2px solid #e9a23b;
+}
+
+/* The small round buttons for Wishlist and Login/Profile */
+.nav-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;         /* makes it a circle */
+  background-color: #ffffff;
+  border: 1px solid #e2ddd0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0e4749;
+}
+
+.nav-icon-btn:hover {
+  background-color: #fff2de;  /* light gold background on hover */
+}
+
+
+/* ---------------------------------------------------------
+   4. CARDS
+   Bootstrap's "card" class already gives every card (for
+   destinations, tours, reviews, etc.) a box with rounded
+   corners. We just tweak the border color and add a shadow
+   when you hover over a card, so it feels clickable.
+--------------------------------------------------------- */
+.card {
+  border-color: #e2ddd0;
+  border-radius: 12px;
+}
+
+.card:hover {
+  box-shadow: 0 10px 24px rgba(14, 71, 73, 0.15);  /* soft shadow */
+}
+
+
+/* ---------------------------------------------------------
+   5. FOOTER (bottom of every page)
+--------------------------------------------------------- */
+.site-footer {
+  background-color: #0e4749;  /* deep teal, same as our dark button */
+  color: #dfeceb;              /* light, slightly green-tinted white */
+}
+
+.site-footer h5 {
+  color: #ffffff;
+}
+
+.site-footer a {
+  color: #c9dcda;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #e9a23b;  /* gold on hover */
+}
+
+.site-footer hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* The small circular social media icons (Facebook, Instagram, Twitter) */
+.social-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.social-icon:hover {
+  background-color: #e9a23b;
+  border-color: #e9a23b;
+  color: #1e2a28;
+}
