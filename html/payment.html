@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | TravelGo</title>
+    <link rel="stylesheet" href="../css/payment.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            TravelGo
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="tours.html">Tours</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-icons">
+            <a href="wishlist.html">
+                <i class="fa-regular fa-heart"></i>
+            </a>
+            <a href="profile.html">
+                <i class="fa-regular fa-user"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ================= MAIN CONTAINER ================= -->
+    <main class="container">
+
+        <!-- Heading -->
+        <section class="page-heading">
+            <div class="section-label">PAYMENT</div>
+            <h1>Choose Payment Method</h1>
+            <p>Your transaction is secure and encrypted.</p>
+        </section>
+
+        <!-- Progress Indicator -->
+        <div class="progress-container">
+            <div class="progress-step completed">
+                <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+                <div class="step-label">Booking</div>
+            </div>
+            <div class="progress-line completed"></div>
+            <div class="progress-step active">
+                <div class="step-circle"><i class="fa-solid fa-2"></i></div>
+                <div class="step-label">Payment</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-circle"><i class="fa-solid fa-3"></i></div>
+                <div class="step-label">Done</div>
+            </div>
+        </div>
+
+        <section class="layout-grid">
+            
+            <!-- Left Column: Payment Methods -->
+            <div>
+                <div class="card-box">
+                    <h2 style="border-bottom: none; margin-bottom: 5px;">Select Payment Method</h2>
+                    
+                    <div class="payment-tabs" style="margin-top: 20px;">
+                        <div class="pay-tab active" onclick="selectMethod('card', this)">
+                            <i class="fa-regular fa-credit-card"></i>
+                            Card
+                        </div>
+                        <div class="pay-tab" onclick="selectMethod('upi', this)">
+                            <i class="fa-brands fa-google-pay"></i>
+                            UPI
+                        </div>
+                        <div class="pay-tab" onclick="selectMethod('netbanking', this)">
+                            <i class="fa-solid fa-building-columns"></i>
+                            Net Banking
+                        </div>
+                    </div>
+
+                    <form action="confirmation.html" method="GET">
+                        <!-- Card Form -->
+                        <div id="form-card" class="payment-form active">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label for="cardName">Name on Card</label>
+                                <input type="text" id="cardName" placeholder="JOHN DOE" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="password" id="cvv" placeholder="123" maxlength="3" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- UPI Form -->
+                        <div id="form-upi" class="payment-form">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label for="upiId">Enter UPI ID</label>
+                                <input type="text" id="upiId" placeholder="username@bankname">
+                            </div>
+                            <p style="color: var(--gray); font-size: 13px; margin-bottom: 15px;">Open your UPI app on your mobile device and approve the payment request.</p>
+                            <div style="text-align: center; margin: 30px 0;">
+                                <i class="fa-solid fa-qrcode" style="font-size: 120px; color: var(--border);"></i>
+                                <p style="font-size: 13px; color: var(--gray); margin-top: 10px;">Scan QR to Pay</p>
+                            </div>
+                        </div>
+
+                        <!-- Net Banking Form -->
+                        <div id="form-netbanking" class="payment-form">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                <label for="bankSelect">Select Your Bank</label>
+                                <select id="bankSelect">
+                                    <option value="" disabled selected>Choose a bank...</option>
+                                    <option value="sbi">State Bank of India (SBI)</option>
+                                    <option value="hdfc">HDFC Bank</option>
+                                    <option value="icici">ICICI Bank</option>
+                                    <option value="axis">Axis Bank</option>
+                                    <option value="kotak">Kotak Mahindra Bank</option>
+                                </select>
+                            </div>
+                            <p style="color: var(--gray); font-size: 13px;">You will be redirected to your bank's secure portal to complete the payment.</p>
+                        </div>
+
+                        <div style="margin-top: 30px; text-align: center; color: var(--gray); font-size: 13px; margin-bottom: 20px;">
+                            <i class="fa-solid fa-lock" style="color: var(--pink); margin-right: 5px;"></i> 256-bit SSL Secure Payment
+                        </div>
+
+                        <button type="submit" class="btn-primary">Confirm & Pay $2,640.00</button>
+                        <a href="booking.html" class="btn-secondary">Back to Booking</a>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary -->
+            <aside>
+                <div class="card-box summary-card">
+                    <h2>Order Summary</h2>
+                    <div class="summary-title">Maldives Paradise Getaway</div>
+                    
+                    <div class="summary-meta" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+                        <span>2 Travellers • 7 Days</span>
+                    </div>
+                    
+                    <div class="price-row">
+                        <span>Base Fare</span>
+                        <span>$2,400.00</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Selected Add-ons</span>
+                        <span>$0.00</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Taxes & Fees</span>
+                        <span>$240.00</span>
+                    </div>
+                    
+                    <div class="price-row total">
+                        <span>Amount to Pay</span>
+                        <span>$2,640.00</span>
+                    </div>
+                </div>
+            </aside>
+            
+        </section>
+    </main>
+
+    <script>
+        function selectMethod(method, element) {
+            document.querySelectorAll('.pay-tab').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+
+            document.querySelectorAll('.payment-form').forEach(form => form.classList.remove('active'));
+            document.getElementById('form-' + method).classList.add('active');
+            
+            if(method === 'card') {
+                document.getElementById('cardNumber').required = true;
+                document.getElementById('cardName').required = true;
+                document.getElementById('expiryDate').required = true;
+                document.getElementById('cvv').required = true;
+                
+                document.getElementById('upiId').required = false;
+                document.getElementById('bankSelect').required = false;
+            } else if (method === 'upi') {
+                document.getElementById('cardNumber').required = false;
+                document.getElementById('cardName').required = false;
+                document.getElementById('expiryDate').required = false;
+                document.getElementById('cvv').required = false;
+                
+                document.getElementById('upiId').required = true;
+                document.getElementById('bankSelect').required = false;
+            } else if (method === 'netbanking') {
+                document.getElementById('cardNumber').required = false;
+                document.getElementById('cardName').required = false;
+                document.getElementById('expiryDate').required = false;
+                document.getElementById('cvv').required = false;
+                
+                document.getElementById('upiId').required = false;
+                document.getElementById('bankSelect').required = true;
+            }
+        }
+    </script>
+</body>
+</html>
