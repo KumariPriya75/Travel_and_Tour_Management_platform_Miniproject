@@ -117,28 +117,28 @@
                             <input type="checkbox" name="addons" value="airport" onchange="calculateTotal()">
                             <div class="addon-details">
                                 <span class="addon-title">Airport Pickup</span>
-                                <span class="addon-price">+$50</span>
+                                <span class="addon-price">+₹50</span>
                             </div>
                         </label>
                         <label class="addon-item">
                             <input type="checkbox" name="addons" value="insurance" onchange="calculateTotal()">
                             <div class="addon-details">
                                 <span class="addon-title">Travel Insurance</span>
-                                <span class="addon-price">+$85</span>
+                                <span class="addon-price">+₹85</span>
                             </div>
                         </label>
                         <label class="addon-item">
                             <input type="checkbox" name="addons" value="guide" onchange="calculateTotal()">
                             <div class="addon-details">
                                 <span class="addon-title">Local Tour Guide</span>
-                                <span class="addon-price">+$120</span>
+                                <span class="addon-price">+₹120</span>
                             </div>
                         </label>
                         <label class="addon-item">
                             <input type="checkbox" name="addons" value="hotel" onchange="calculateTotal()">
                             <div class="addon-details">
                                 <span class="addon-title">Extra Hotel Night</span>
-                                <span class="addon-price">+$150</span>
+                                <span class="addon-price">+₹150</span>
                             </div>
                         </label>
                     </div>
@@ -162,20 +162,20 @@
                     
                     <div class="price-row">
                         <span>Tour Price (x2)</span>
-                        <span>$2,400.00</span>
+                        <span>₹2,400.00</span>
                     </div>
                     <div class="price-row">
                         <span>Add-ons</span>
-                        <span id="addons-price">$0.00</span>
+                        <span id="addons-price">₹0.00</span>
                     </div>
                     <div class="price-row">
                         <span>Taxes & Fees (10%)</span>
-                        <span id="taxes-price">$240.00</span>
+                        <span id="taxes-price">₹240.00</span>
                     </div>
                     
                     <div class="price-row total">
                         <span>Total Amount</span>
-                        <span id="total-price">$2,640.00</span>
+                        <span id="total-price">₹2,640.00</span>
                     </div>
                 </div>
             </aside>
@@ -197,9 +197,9 @@
             const taxes = subtotal * 0.10;
             const total = subtotal + taxes;
             
-            document.getElementById('addons-price').innerText = '$' + addonsTotal.toFixed(2);
-            document.getElementById('taxes-price').innerText = '$' + taxes.toFixed(2);
-            document.getElementById('total-price').innerText = '$' + total.toFixed(2);
+            document.getElementById('addons-price').innerText = '₹' + addonsTotal.toFixed(2);
+            document.getElementById('taxes-price').innerText = '₹' + taxes.toFixed(2);
+            document.getElementById('total-price').innerText = '₹' + total.toFixed(2);
         }
     </script>
 </body>
