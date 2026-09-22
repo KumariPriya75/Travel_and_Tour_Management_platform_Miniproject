@@ -364,9 +364,10 @@ img {
 
 /* ---------- Tour details page: image gallery ---------- */
 .gallery {
-  max-width: 1400px;
-  margin: 25px auto 0 auto;
-  padding: 0 20px;
+  width: 755px;
+  margin: 25px 0 0 max(20px, calc((100vw - 1240px) / 2));
+  padding: 0;
+  position: relative;
 }
 
 .gallery-radio {
@@ -374,19 +375,20 @@ img {
 }
 
 .gallery-main {
-  height: 480px;
-  border-radius: 16px;
+  width: 600px;
+  height: 300px;
+  border-radius: 12px;
   overflow: hidden;
   background-color: #eaf6f6;
 }
 
 .g-img {
   display: none;
+  width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-/* Show only the big image that matches the selected radio button */
 #img1:checked ~ .gallery-main .g-img1,
 #img2:checked ~ .gallery-main .g-img2,
 #img3:checked ~ .gallery-main .g-img3,
@@ -394,68 +396,72 @@ img {
   display: block;
 }
 
+/* Thumbnails move to the right side of the main image */
 .gallery-thumbs {
+  position: absolute;
+  top: 0;
+  left: 604px;
   display: flex;
-  gap: 10px;
-  margin-top: 12px;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
 }
 
 .gallery-thumbs label {
-  width: 100px;
-  height: 70px;
+  width: 120px;
+  height: 68px;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
 }
 
 .gallery-thumbs img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /* ---------- Tour details page: main layout ---------- */
 .details-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-  max-width: 1400px;
-  margin: 28px auto;
-  padding: 0 20px;
+  display: block;
+  max-width: 755px;
+  margin: 10px 0 28px max(20px, calc((100vw - 1240px) / 2));
+  padding: 0;
 }
 
 .details-main {
-  flex: 1;
+  width: 755px;
 }
 
 .details-main section,
 .pricing-sidebar {
   background-color: white;
-  border-radius: 14px;
-  padding: 24px;
+  border-radius: 12px;
+  padding: 18px;
   box-shadow: 0 2px 8px #cccccc;
-  margin-bottom: 20px;
-}
-
-.details-main h2 {
-  font-size: 22px;
-  color: #073b5c;
   margin-bottom: 14px;
 }
 
+.details-main h2 {
+  font-size: 18px;
+  color: #073b5c;
+  margin-bottom: 10px;
+}
+
 .details-main p {
-  font-size: 16px;
+  font-size: 14px;
   color: #66788a;
 }
 
 /* ---------- Tour details page: title area ---------- */
 .tour-header h1 {
-  font-size: 32px;
+  font-size: 24px;
   color: #073b5c;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .tour-header p {
-  margin: 5px 0;
+  margin: 4px 0;
 }
 
 .tour-header .destination i,
@@ -470,13 +476,13 @@ img {
 
 /* ---------- Tour details page: lists ---------- */
 .tour-highlights ul {
-  padding-left: 20px;
+  padding-left: 18px;
 }
 
 .tour-highlights li,
 .inclusions-exclusions li {
-  padding: 6px 0;
-  font-size: 16px;
+  padding: 4px 0;
+  font-size: 14px;
 }
 
 .inclusions-exclusions {
@@ -490,7 +496,7 @@ img {
 }
 
 .inclusions-exclusions h3 {
-  font-size: 17px;
+  font-size: 16px;
   color: #073b5c;
   margin-bottom: 8px;
 }
@@ -514,13 +520,13 @@ img {
 .faq details {
   border: 1px solid #d9e5e8;
   border-radius: 9px;
-  padding: 13px 16px;
-  margin-bottom: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
 }
 
 .itinerary-day summary,
 .faq summary {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: bold;
   color: #073b5c;
   cursor: pointer;
@@ -528,19 +534,19 @@ img {
 
 .itinerary-day p,
 .faq p {
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
-/* ---------- Tour details page: reviews (for pages that have them) ---------- */
+/* ---------- Tour details page: reviews ---------- */
 .avg-rating {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: bold;
   color: #0f8b8d;
 }
 
 .review-card {
   border-top: 1px solid #d9e5e8;
-  padding: 15px 0;
+  padding: 14px 0;
 }
 
 .review-name {
@@ -552,51 +558,55 @@ img {
 }
 
 .review-text {
-  font-size: 16px;
+  font-size: 14px;
   color: #66788a;
 }
 
-/* ---------- Tour details page: price box on the right ---------- */
+/* ---------- Booking card on the right ---------- */
 .pricing-sidebar {
+  position: absolute;
+  top: 89px;
+  right: max(20px, calc((100vw - 1240px) / 2));
   width: 330px;
+  padding: 18px;
+  z-index: 5;
 }
 
 .pricing-sidebar .price {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: bold;
   color: #ff6b5a;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
 
 .pricing-sidebar .price span {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   color: #66788a;
 }
 
 .available-dates h3 {
-  font-size: 17px;
+  font-size: 16px;
   color: #073b5c;
   margin-bottom: 8px;
 }
 
 .available-dates label {
   display: block;
-  font-size: 16px;
-  margin: 9px 0;
+  font-size: 14px;
+  margin: 8px 0;
 }
 
-/* Wide "Add to Wishlist" button (checkbox hidden, heart turns coral when ticked) */
 .wishlist-full {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   width: 100%;
-  padding: 13px;
+  padding: 11px;
   border: 1px solid #d9e5e8;
-  border-radius: 9px;
-  margin: 15px 0;
+  border-radius: 8px;
+  margin: 14px 0 10px;
   color: #073b5c;
   font-weight: bold;
   cursor: pointer;
@@ -607,68 +617,79 @@ img {
 }
 
 .wishlist-full .heart-icon {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .wishlist-full input:checked + .heart-icon {
   color: #ff6b5a;
 }
 
-/* ---------- Tablet: sidebar goes on top, cards below ---------- */
-@media (max-width: 900px) {
-  .tours-layout {
-    flex-direction: column;
-    align-items: stretch;
-  }
+.btn-book-now {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
 
-  .filter-sidebar {
-    width: 100%;
-  }
-
+/* ---------- Keep the booking card at the top-right on desktop ---------- */
+@media (min-width: 901px) {
   .details-layout {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .pricing-sidebar {
-    width: 100%;
+    min-height: 500px;
   }
 }
 
-/* ---------- Mobile: everything in one column ---------- */
-@media (max-width: 600px) {
-  .navbar {
-    height: auto;
-    flex-direction: column;
-    padding: 10px 5%;
-  }
-
-  .navbar nav {
-    text-align: center;
-  }
-
-  .navbar nav a {
-    margin: 0 10px;
-  }
-
-  .nav-icons {
-    margin-top: 8px;
-  }
-
-  .search-bar {
-    flex-direction: column;
-  }
-
-  .search-bar input {
-    width: 100%;
-  }
-
-  .tour-card {
-    width: 100%;
+/* ---------- Tablet ---------- */
+@media (max-width: 900px) {
+  .gallery {
+    width: auto;
+    margin: 20px;
   }
 
   .gallery-main {
+    width: calc(100% - 130px);
+    height: 320px;
+  }
+
+  .gallery-thumbs {
+    left: calc(100% - 120px);
+  }
+
+  .details-layout {
+    width: auto;
+    max-width: none;
+    margin: 10px 20px 28px;
+  }
+
+  .details-main {
+    width: 100%;
+  }
+
+  .pricing-sidebar {
+    position: static;
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  .gallery-main {
+    width: 100%;
     height: 250px;
+  }
+
+  .gallery-thumbs {
+    position: static;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  .gallery-thumbs label {
+    width: 80px;
+    height: 55px;
+  }
+
+  .details-layout {
+    margin: 10px 15px 25px;
   }
 
   .inclusions-exclusions {
