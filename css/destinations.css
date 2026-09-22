@@ -1,90 +1,145 @@
-/* =========================================================
-   DESTINATIONS.CSS
-   -----------------------------------------------------------
-   Styles that are ONLY used on destinations.html.
-   Loaded after Bootstrap and common.css.
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   1. PAGE HEADER BANNER (top of the page)
---------------------------------------------------------- */
 .page-header {
-  background-color: #0e4749;  /* deep teal, same as our footer */
-  padding: 56px 0;
+  background-color: #eaf6f6;
+  color: #073b5c;
+  padding: 50px 0;
+  text-align: center;
 }
 
+.page-header h1 {
+  color: #073b5c;
+  margin-bottom: 10px;
+}
 
-/* ---------------------------------------------------------
-   2. SEARCH + FILTER BOX
-   A simple white card holding the search bar and the
-   category filter buttons.
---------------------------------------------------------- */
-.filter-card {
+.page-header p {
+  color: #66788a;
+}
+
+.filter-box {
   background-color: #ffffff;
-  border: 1px solid #e2ddd0;
-  border-radius: 16px;
+  border-radius: 14px;
   padding: 24px;
-  margin-top: 30px;
-  margin-bottom: 40px;
+  margin: 30px 0 40px;
+  box-shadow: 0 2px 8px #cccccc;
 }
 
-/* Note: these filter buttons (All / Adventure / Family / ...)
-   are for browsing only. This project has no JavaScript, so
-   clicking a button does not hide or show cards - it is just
-   a visual way to group destinations by category. */
+.search-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
 
+.search-bar input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #d9e5e8;
+  border-radius: 8px;
+  font-family: inherit;
+}
 
-/* ---------------------------------------------------------
-   3. DESTINATION CARDS
-   All destination photos are forced to the same height so
-   the cards line up neatly in a row.
---------------------------------------------------------- */
-.dest-card img {
-  height: 180px;
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #d9e5e8;
+  background-color: #ffffff;
+  font-weight: bold;
+  font-size: 13px;
+  color: #66788a;
+}
+
+.filter-btn.active {
+  background-color: #0f8b8d;
+  border-color: #0f8b8d;
+  color: #ffffff;
+}
+
+.featured-box {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 2px 8px #cccccc;
+}
+
+.featured-box img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-/* The small colored label showing the category, e.g. "Beach" */
-.category-label {
-  display: inline-block;
-  background-color: #fff2de;
-  color: #0e4749;
-  font-weight: 700;
-  font-size: 0.75rem;
-  padding: 3px 10px;
-  border-radius: 999px;   /* fully rounded, pill shape */
+.featured-box .content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-box .label {
+  color: #ff6b5a;
+  font-weight: bold;
+  font-size: 13px;
   margin-bottom: 8px;
 }
 
-
-/* ---------------------------------------------------------
-   4. FEATURED DESTINATION (highlighted banner)
---------------------------------------------------------- */
-.featured-destination img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
+.featured-box h2 {
+  color: #073b5c;
+  margin-bottom: 12px;
 }
 
-.featured-destination .content-box {
-  padding: 30px;
+.featured-box p {
+  color: #66788a;
+  margin-bottom: 20px;
 }
 
-.featured-label {
-  color: #c97f1f;   /* darker gold text */
-  font-weight: 700;
-  font-size: 0.85rem;
+.inspiration-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-
-/* ---------------------------------------------------------
-   5. TRAVEL INSPIRATION (small blog-style article cards)
---------------------------------------------------------- */
 .inspiration-card img {
   width: 100%;
-  height: 190px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-bottom: 14px;
+}
+
+.inspiration-card span {
+  font-size: 12px;
+  color: #66788a;
+}
+
+.inspiration-card h3 {
+  margin: 8px 0;
+  color: #073b5c;
+}
+
+.inspiration-card p {
+  font-size: 14px;
+  color: #66788a;
+}
+
+@media (max-width: 900px) {
+  .featured-box {
+    grid-template-columns: 1fr;
+  }
+  .inspiration-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+  }
+  .inspiration-grid {
+    grid-template-columns: 1fr;
+  }
 }
