@@ -4,40 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TravelGo Tours</title>
+
   <link rel="stylesheet" href="../css/tours.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-  <header class="navbar">
-    <div class="logo">TravelGo</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="destinations.html">Destinations</a>
-      <a href="tours.html" class="active">Tours</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="nav-icons">
-      <a href="wishlist.html"><i class="fa-regular fa-heart"></i></a>
-      <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+  <nav class="navbar">
+    <div class="container">
+
+      <a href="index.html" class="logo">TravelGo</a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="tours.html" class="active">Tours</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-icons">
+        <a href="wishlist.html">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+
+        <a href="profile.html">
+          <i class="fa-regular fa-user"></i>
+        </a>
+      </div>
+
     </div>
-  </header>
+  </nav>
+
 
   <section class="page-header">
     <h1>Explore Our Tours</h1>
     <p>Handpicked tour packages for every kind of traveller</p>
   </section>
 
+
   <form class="search-bar">
     <input type="text" name="q" placeholder="Search tours, destinations...">
-    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+    <button type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i> Search
+    </button>
   </form>
+
 
   <div class="tours-layout">
 
     <aside class="filter-sidebar">
+
       <form>
+
         <div class="filter-group">
           <h3>Destination</h3>
           <label><input type="checkbox"> Goa</label>
@@ -78,13 +101,17 @@
 
         <button type="submit" class="btn-apply">Apply Filters</button>
         <button type="reset" class="btn-clear">Clear All</button>
+
       </form>
+
     </aside>
+
 
     <main class="tours-main">
 
       <div class="sort-bar">
         <span class="results-count">8 tours found</span>
+
         <select class="sort-select">
           <option>Price: Low to High</option>
           <option>Price: High to Low</option>
@@ -92,20 +119,33 @@
         </select>
       </div>
 
+
       <section class="tour-grid">
 
+        <!-- Goa -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/goa-1.jpg" alt="Goa Beach Tour">
+
             <span class="category-tag">Beach</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Goa Beach Escape</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Goa, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Goa, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -114,25 +154,52 @@
               <i class="fa-regular fa-star"></i>
               4.5
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 3 Days / 2 Nights</p>
-            <p class="card-desc">Golden beaches, Portuguese-era churches and lively beach shacks along India's west coast.</p>
-            <p class="price">₹8,999 <span>/ person</span></p>
-            <a href="tour-details-goa.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              3 Days / 2 Nights
+            </p>
+
+            <p class="card-desc">
+              Golden beaches, Portuguese-era churches and lively beach shacks along India's west coast.
+            </p>
+
+            <p class="price">
+              ₹8,999 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-goa.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
+
+        <!-- Manali -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/manali-1.jpg" alt="Manali Adventure Tour">
+
             <span class="category-tag">Adventure</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Manali Hills Adventure</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Manali, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Manali, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -141,25 +208,52 @@
               <i class="fa-regular fa-star"></i>
               4.8
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</p>
-            <p class="card-desc">Gateway to the Himalayas — snow-capped peaks, Solang Valley and Rohtang Pass.</p>
-            <p class="price">₹14,499 <span>/ person</span></p>
-            <a href="tour-details-manali.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              5 Days / 4 Nights
+            </p>
+
+            <p class="card-desc">
+              Gateway to the Himalayas — snow-capped peaks, Solang Valley and Rohtang Pass.
+            </p>
+
+            <p class="price">
+              ₹14,499 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-manali.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
+
+        <!-- Kerala -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/kerala-1.jpg" alt="Kerala Nature Tour">
+
             <span class="category-tag">Nature</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Kerala Backwaters</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Kerala, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Kerala, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -168,25 +262,52 @@
               <i class="fa-regular fa-star"></i>
               4.6
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</p>
-            <p class="card-desc">Cruise the palm-fringed backwaters of Vembanad Lake on a traditional houseboat.</p>
-            <p class="price">₹11,999 <span>/ person</span></p>
-            <a href="tour-details-kerala.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              4 Days / 3 Nights
+            </p>
+
+            <p class="card-desc">
+              Cruise the palm-fringed backwaters of Vembanad Lake on a traditional houseboat.
+            </p>
+
+            <p class="price">
+              ₹11,999 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-kerala.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
+
+        <!-- Rajasthan -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/rajasthan-1.jpg" alt="Rajasthan Heritage Tour">
+
             <span class="category-tag">Heritage</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Royal Rajasthan Trail</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Jaipur, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Jaipur, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -195,25 +316,52 @@
               <i class="fa-regular fa-star"></i>
               4.4
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</p>
-            <p class="card-desc">Explore the Pink City — Hawa Mahal, Amber Fort and royal Rajputana heritage.</p>
-            <p class="price">₹16,999 <span>/ person</span></p>
-            <a href="tour-details-rajasthan.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              6 Days / 5 Nights
+            </p>
+
+            <p class="card-desc">
+              Explore the Pink City — Hawa Mahal, Amber Fort and royal Rajputana heritage.
+            </p>
+
+            <p class="price">
+              ₹16,999 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-rajasthan.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
+
+        <!-- Rishikesh -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/rishikesh-1.jpg" alt="Rishikesh Spiritual Tour">
+
             <span class="category-tag">Religious</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Rishikesh Spiritual Journey</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Rishikesh, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Rishikesh, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -222,25 +370,52 @@
               <i class="fa-regular fa-star"></i>
               4.9
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 2 Days / 1 Night</p>
-            <p class="card-desc">Yoga capital of the world, set on the banks of the holy Ganga near Laxman Jhula.</p>
-            <p class="price">₹5,499 <span>/ person</span></p>
-            <a href="tour-details-rishikesh.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              2 Days / 1 Night
+            </p>
+
+            <p class="card-desc">
+              Yoga capital of the world, set on the banks of the holy Ganga near Laxman Jhula.
+            </p>
+
+            <p class="price">
+              ₹5,499 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-rishikesh.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
+
+        <!-- Lonavala -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/lonavala-1.jpg" alt="Family Resort Tour">
+
             <span class="category-tag">Family</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Family Fun Resort Getaway</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Lonavala, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Lonavala, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -249,25 +424,52 @@
               <i class="fa-regular fa-star"></i>
               4.3
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 3 Days / 2 Nights</p>
-            <p class="card-desc">Misty hill station in the Western Ghats, known for waterfalls, forts and valley views.</p>
-            <p class="price">₹9,499 <span>/ person</span></p>
-            <a href="tour-details-lonavala.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              3 Days / 2 Nights
+            </p>
+
+            <p class="card-desc">
+              Misty hill station in the Western Ghats, known for waterfalls, forts and valley views.
+            </p>
+
+            <p class="price">
+              ₹9,499 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-lonavala.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
+
+        <!-- Andaman -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/andaman-1.jpg" alt="Andaman Beach Tour">
+
             <span class="category-tag">Beach</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Andaman Island Bliss</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Port Blair, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Port Blair, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -276,25 +478,52 @@
               <i class="fa-regular fa-star"></i>
               4.7
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</p>
-            <p class="card-desc">Turquoise waters and coral reefs at Radhanagar Beach, Havelock Island.</p>
-            <p class="price">₹22,999 <span>/ person</span></p>
-            <a href="tour-details-andaman.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              5 Days / 4 Nights
+            </p>
+
+            <p class="card-desc">
+              Turquoise waters and coral reefs at Radhanagar Beach, Havelock Island.
+            </p>
+
+            <p class="price">
+              ₹22,999 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-andaman.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
+
+        <!-- Ladakh -->
         <article class="tour-card">
+
           <div class="card-image">
             <img src="../images/ladakh-1.jpg" alt="Ladakh Adventure Tour">
+
             <span class="category-tag">Adventure</span>
+
             <label class="wishlist-btn">
               <input type="checkbox">
-              <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+              <span class="heart-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
             </label>
           </div>
+
           <div class="card-body">
             <h3>Ladakh Mountain Expedition</h3>
-            <p class="destination"><i class="fa-solid fa-location-dot"></i> Leh, India</p>
+
+            <p class="destination">
+              <i class="fa-solid fa-location-dot"></i>
+              Leh, India
+            </p>
+
             <p class="rating">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -303,14 +532,29 @@
               <i class="fa-regular fa-star"></i>
               4.9
             </p>
-            <p class="duration"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</p>
-            <p class="card-desc">High-altitude desert landscapes, Buddhist monasteries and the stunning Pangong Lake.</p>
-            <p class="price">₹24,999 <span>/ person</span></p>
-            <a href="tour-details-ladakh.html" class="btn-view">View Details</a>
+
+            <p class="duration">
+              <i class="fa-regular fa-clock"></i>
+              7 Days / 6 Nights
+            </p>
+
+            <p class="card-desc">
+              High-altitude desert landscapes, Buddhist monasteries and the stunning Pangong Lake.
+            </p>
+
+            <p class="price">
+              ₹24,999 <span>/ person</span>
+            </p>
+
+            <a href="tour-details-ladakh.html" class="btn-view">
+              View Details
+            </a>
           </div>
+
         </article>
 
       </section>
+
 
       <nav class="pagination">
         <a class="active" href="#">1</a>
@@ -320,10 +564,13 @@
       </nav>
 
     </main>
+
   </div>
 
+
   <footer class="site-footer">
-    © 2026 TravelGo. All rights reserved. Photos from <a href="https://www.pexels.com">Pexels</a>.
+    © 2026 TravelGo. All rights reserved.
+    Photos from <a href="https://www.pexels.com">Pexels</a>.
   </footer>
 
 </body>
