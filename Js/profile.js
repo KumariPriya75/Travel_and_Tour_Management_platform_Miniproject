@@ -1,27 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ==========================================
-  // 1. SELECTORS (Mapped to your exact HTML)
-  // ==========================================
   const editBtn = document.querySelector(".edit-profile");
   const avatarEl = document.querySelector(".avatar");
   const avatarControls = document.querySelector(".avatar-controls");
   const avatarInput = document.querySelector("#profile-picture");
   const sidebarNameEl = document.querySelector(".profile-main h2");
   const sidebarEmailEl = document.querySelector(".profile-email");
-  const wishlistCountEl = document.querySelector(".profile-stat > div:first-child strong");
+   const wishlistCountEl = document.querySelector(".profile-stat > div:first-child strong");
 
-  // Personal Information Grid items (0: Name, 1: Email, 2: Phone, 3: Location)
   const infoBlocks = document.querySelectorAll(".information-grid .information");
   
-  // Travel Preferences cards
   const preferenceCards = document.querySelectorAll(".preference-list .preference");
-
-  // Account Settings rows (0: Password, 1: Notifications, 2: Language)
   const accountOptions = document.querySelectorAll(".account-option");
-
-  // ==========================================
-  // 2. INITIAL STATE & LOCALSTORAGE
-  // ==========================================
   const defaultData = {
     fullName: "Krishna Bansal",
     email: "krishna@example.com",
@@ -35,10 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let userData = JSON.parse(localStorage.getItem("travelGoProfile")) || defaultData;
   let isEditing = false;
   const defaultWishlistPlaces = ["Paris", "Maldives", "Switzerland", "Bali"];
-
-  // ==========================================
-  // 3. HELPER FUNCTIONS
-  // ==========================================
   function getInitials(name) {
     const parts = name.trim().split(/\s+/);
     if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
@@ -65,15 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     wishlistCountEl.textContent = String(new Set(savedTrips).size).padStart(2, "0");
   }
-
-  // ==========================================
-  // 4. RENDER PROFILE DATA TO UI
-  // ==========================================
   function renderProfile() {
     updateWishlistCount();
     avatarControls.hidden = !isEditing;
-
-    // Update Sidebar
     if (userData.profileImage) {
       const image = document.createElement("img");
       image.src = userData.profileImage;
@@ -85,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarNameEl.textContent = userData.fullName;
     sidebarEmailEl.textContent = userData.email;
 
-    // Update Personal Information Fields
     const fieldValues = [
       userData.fullName,
       userData.email,
@@ -110,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Update Edit Button appearance
     if (isEditing) {
       editBtn.textContent = "Save Changes";
       editBtn.style.backgroundColor = "#10b981"; // Green save state
@@ -118,8 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
       editBtn.textContent = "Edit Profile";
       editBtn.style.backgroundColor = ""; // Reverts to your CSS color
     }
-
-    // Update Preferences Active State
     preferenceCards.forEach((card) => {
       const title = card.querySelector("strong").textContent.trim();
       if (userData.preferences.includes(title)) {
@@ -131,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Update Account Settings Subtitles
     if (accountOptions[1]) {
       accountOptions[1].querySelector("span").textContent = userData.notifications
         ? "Enabled — Receiving trip alerts"
@@ -147,12 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
       updateWishlistCount();
     }
   });
-
-  // ==========================================
-  // 5. EVENT LISTENERS
-  // ==========================================
-
-  // A. Edit / Save Profile Button
   editBtn.addEventListener("click", () => {
     if (isEditing) {
       const inputs = document.querySelectorAll(".profile-edit-input");

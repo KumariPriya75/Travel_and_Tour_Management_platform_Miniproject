@@ -8,13 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const legacyWishlistKey = "travelGoWishlist";
   const seededKey = "travelGoWishlistSeeded";
   const tours = {
-    "Goa Beach Escape": {
+    "Goa Beach Escape":{
       location: "Goa, India", category: "BEACH", image: "goa-1.jpg", rating: "4.5",
       duration: "3 Days / 2 Nights", price: 8999, href: "tour-details-goa.html"
     },
-    "Manali Hills Adventure": {
+    "Manali Hills Adventure":{
       location: "Manali, India", category: "ADVENTURE", image: "manali-1.jpg", rating: "4.8",
-      duration: "5 Days / 4 Nights", price: 14499, href: "tour-details-manali.html"
+      duration: "5 Days /4 Nights", price: 14499, href: "tour-details-manali.html"
     },
     "Kerala Backwaters": {
       location: "Kerala, India", category: "NATURE", image: "kerala-1.jpg", rating: "4.6",
