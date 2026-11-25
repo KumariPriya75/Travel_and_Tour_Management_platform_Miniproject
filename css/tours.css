@@ -21,41 +21,94 @@ img {
   display: block;
   width: 100%;
 }
-
 /* ---------- Navbar ---------- */
 .navbar {
-  height: 64px;
+  background-color: #073b5c;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5%;
-  background-color: #073b5c;
-  color: white;
+  height: 70px;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
+  color: #ffffff;
 }
 
-.navbar nav a {
-  font-size: 17px;
-  color: white;
-  margin-left: 30px;
-}
-
-.navbar nav a:hover,
-.navbar nav a.active {
+.logo span {
   color: #ff6b5a;
 }
 
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ff6b5a;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+  right: 0;
+}
+
 .nav-icons a {
-  font-size: 22px;
-  color: white;
-  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 
 .nav-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
   color: #ff6b5a;
 }
 
@@ -104,7 +157,7 @@ img {
   cursor: pointer;
 }
 
-/* ---------- Layout: sidebar on the left, tours on the right ---------- */
+/* ---------- Tours layout ---------- */
 .tours-layout {
   display: flex;
   align-items: flex-start;
@@ -116,11 +169,13 @@ img {
 
 .tours-main {
   flex: 1;
+  min-width: 0;
 }
 
 /* ---------- Filter sidebar ---------- */
 .filter-sidebar {
   width: 270px;
+  flex-shrink: 0;
   background-color: white;
   border-radius: 14px;
   padding: 24px;
@@ -171,7 +226,6 @@ img {
   cursor: pointer;
 }
 
-/* When any filter in the form is selected, Clear All turns coral */
 .filter-sidebar form:has(input:checked) .btn-clear {
   background-color: #ff6b5a;
   color: white;
@@ -183,6 +237,7 @@ img {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 18px;
+  gap: 12px;
 }
 
 .results-count {
@@ -198,7 +253,7 @@ img {
   font-size: 16px;
 }
 
-/* ---------- Tour cards: two cards in each row ---------- */
+/* ---------- Tour cards ---------- */
 .tour-grid {
   display: flex;
   flex-wrap: wrap;
@@ -243,7 +298,7 @@ img {
   font-weight: bold;
 }
 
-/* Wishlist heart: the checkbox is hidden, the heart icon is shown */
+/* ---------- Wishlist Heart ---------- */
 .wishlist-btn {
   position: absolute;
   top: 13px;
@@ -262,13 +317,15 @@ img {
   display: none;
 }
 
-.heart-icon {
+.heart-icon i {
   font-size: 21px;
   color: #777777;
+  transition: 0.2s ease;
 }
 
-.wishlist-btn input:checked + .heart-icon {
-  color: #ff6b5a;
+/* Filled Red Heart */
+.wishlist-btn input:checked + .heart-icon i {
+  color: #ff0000;
 }
 
 /* Text area */
@@ -332,6 +389,7 @@ img {
   justify-content: center;
   gap: 8px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .pagination a {
@@ -360,7 +418,7 @@ img {
   text-decoration: underline;
 }
 
-/* ---------- Tablet: sidebar goes on top, cards below ---------- */
+/* ---------- Tablet ---------- */
 @media (max-width: 900px) {
   .tours-layout {
     flex-direction: column;
@@ -372,24 +430,59 @@ img {
   }
 }
 
-/* ---------- Mobile: everything in one column ---------- */
-@media (max-width: 600px) {
-  .navbar {
-    height: auto;
+/* ---------- Mobile Navbar ---------- */
+@media (max-width: 768px) {
+
+  .navbar .container {
+    position: relative;
+    height: 65px;
+  }
+
+  .menu-icon {
+    display: block;
+    order: 2;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: #073b5c;
     flex-direction: column;
-    padding: 10px 5%;
+    align-items: stretch;
+    gap: 0;
+    padding: 15px 25px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .navbar nav {
-    text-align: center;
+  .menu-toggle:checked ~ .mobile-menu {
+    display: flex;
   }
 
-  .navbar nav a {
-    margin: 0 10px;
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
   }
 
   .nav-icons {
-    margin-top: 8px;
+    position: static;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .search-bar {
@@ -402,5 +495,30 @@ img {
 
   .tour-card {
     width: 100%;
+  }
+}
+
+/* ---------- Small Mobile Screens ---------- */
+@media (max-width: 480px) {
+
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .page-header p {
+    font-size: 16px;
+  }
+
+  .card-body {
+    padding: 17px;
+  }
+
+  .card-body h3 {
+    font-size: 21px;
+  }
+
+  .sort-bar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
