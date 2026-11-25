@@ -88,6 +88,12 @@ img {
     right: 0;
 }
 
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .nav-icons a {
     width: 40px;
     height: 40px;
@@ -505,6 +511,12 @@ img {
     font-size: 19px;
     color: #073b5c;
     margin-bottom: 12px;
+}
+
+.details-main h2 {
+  font-size: 18px;
+  color: #073b5c;
+  margin-bottom: 10px;
 }
 
 .details-main p {

@@ -1,0 +1,1 @@
+This folder is empty because every image on the site is loaded from a hosted link (Unsplash and Wikimedia Commons), so the site works without downloading anything. Put your own image files here and change the matching src in the HTML if you want to use local photos instead.
