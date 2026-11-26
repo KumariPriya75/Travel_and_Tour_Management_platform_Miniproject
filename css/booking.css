@@ -1,3 +1,4 @@
+
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 * {
@@ -16,7 +17,6 @@
     --bg: #f8faf9;
     --text: #17324d;
     --gray: #66788a;
-    
     --border: #d9e5e8;
 }
 
@@ -30,6 +30,7 @@ body {
 }
 
 /* ================= NAVBAR ================= */
+
 .navbar {
     background-color: #073b5c;
     position: sticky;
@@ -42,9 +43,12 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 70px;
+    width: 100%;
     max-width: 1150px;
     margin: 0 auto;
     padding: 0 20px;
+    flex-grow: 0;
+    position: relative;
 }
 
 .logo {
@@ -54,12 +58,36 @@ body {
     text-decoration: none;
 }
 
+.logo span {
+    color: #ff6b5a;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.mobile-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 26px;
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -82,6 +110,8 @@ body {
     display: flex;
     align-items: center;
     gap: 14px;
+    position: absolute;
+    right: 0;
 }
 
 .nav-icons a {
@@ -102,18 +132,69 @@ body {
     color: #ff6b5a;
 }
 
-.menu-toggle {
-    display: none;
-}
+/* ================= MOBILE NAVBAR ================= */
 
-.menu-icon {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: #ffffff;
+@media (max-width: 768px) {
+
+    .navbar .container {
+        position: relative;
+        height: 65px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+        order: 2;
+    }
+
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        box-sizing: border-box;
+        background-color: #073b5c;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 15px 25px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-toggle:checked ~ .mobile-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .nav-icons {
+        position: static;
+        margin-top: 10px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
 }
 
 /* ================= MAIN CONTAINER ================= */
+
 .container {
     width: 88%;
     max-width: 1350px;
@@ -123,6 +204,7 @@ body {
 }
 
 /* ================= HEADING ================= */
+
 .page-heading {
     margin-bottom: 30px;
 }
@@ -147,6 +229,7 @@ body {
 }
 
 /* ================= PROGRESS ================= */
+
 .progress-container {
     display: flex;
     align-items: center;
@@ -182,24 +265,16 @@ body {
     font-weight: bold;
 }
 
-.progress-step.active .step-circle {
-    border-color: var(--pink);
-    background: var(--pink);
-    color: var(--white);
-}
-
-.progress-step.active .step-label {
-    color: var(--pink);
-}
-
+.progress-step.active .step-circle,
 .progress-step.completed .step-circle {
-    border-color: var(--blue);
-    background: var(--blue);
+    border-color: var(--apricot);
+    background: var(--apricot);
     color: var(--white);
 }
 
+.progress-step.active .step-label,
 .progress-step.completed .step-label {
-    color: var(--blue);
+    color: var(--apricot);
 }
 
 .progress-line {
@@ -211,10 +286,11 @@ body {
 }
 
 .progress-line.completed {
-    background: var(--blue);
+    background: var(--apricot);
 }
 
 /* ================= LAYOUT ================= */
+
 .layout-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -228,6 +304,7 @@ body {
 }
 
 /* ================= CARDS ================= */
+
 .card-box {
     background: var(--white);
     border-radius: 13px;
@@ -245,6 +322,7 @@ body {
 }
 
 /* ================= FORMS ================= */
+
 .form-row {
     display: flex;
     gap: 20px;
@@ -263,7 +341,7 @@ body {
     margin-bottom: 8px;
 }
 
-.form-group input, 
+.form-group input,
 .form-group select {
     width: 100%;
     padding: 12px 15px;
@@ -291,6 +369,7 @@ body {
 }
 
 /* ================= ADD-ONS ================= */
+
 .addon-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -346,6 +425,7 @@ body {
 }
 
 /* ================= BUTTONS ================= */
+
 .btn-primary {
     display: block;
     width: 100%;
@@ -388,6 +468,7 @@ body {
 }
 
 /* ================= SUMMARY ================= */
+
 .summary-card {
     position: sticky;
     top: 20px;

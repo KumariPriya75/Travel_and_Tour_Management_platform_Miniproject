@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 * {
@@ -9,19 +11,16 @@
 :root {
     --blue: #073b5c;
     --pink: #ff6b5a;
-    --apricot: #0f8b8d;
-    --cupcake: #eaf6f6;
-    --purple: #0f8b8d;
+    --teal: #0f8b8d;
     --white: #ffffff;
     --bg: #f8faf9;
-    --text: #17324d;
-    --gray: #66788a;
-    
+    --text: #243746;
+    --gray: #75828d;
     --border: #d9e5e8;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -29,15 +28,21 @@ body {
     flex-direction: column;
 }
 
-/* ================= NAVBAR ================= */
-.navbar {
-    background-color: #073b5c;
-    position: sticky;
-    top: 0;
-    z-index: 50;
+a {
+    text-decoration: none;
 }
 
-.navbar .container {
+/* NAVBAR */
+
+.navbar {
+    background: var(--blue);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+.nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,61 +50,18 @@ body {
     max-width: 1150px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
+    color: var(--white);
+    white-space: nowrap;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    list-style: none;
-}
-
-.nav-links a {
-    font-weight: bold;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff6b5a;
-}
-
-.nav-icons {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
-.nav-icons a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    text-decoration: none;
-}
-
-.nav-icons a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #ff6b5a;
+.logo span {
+    color: var(--pink);
 }
 
 .menu-toggle {
@@ -110,10 +72,66 @@ body {
     display: none;
     font-size: 28px;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--white);
 }
 
-/* ================= MAIN CONTAINER ================= */
+.mobile-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    min-width: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.nav-links a {
+    font-weight: bold;
+    color: var(--white);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--pink);
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    position: absolute;
+    right: 0;
+}
+
+.nav-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.nav-icons a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--pink);
+}
+
+/* MAIN CONTAINER */
+
 .container {
     width: 88%;
     max-width: 1350px;
@@ -122,7 +140,67 @@ body {
     flex-grow: 1;
 }
 
-/* ================= PROGRESS ================= */
+/* MOBILE NAVBAR */
+
+@media (max-width: 1000px) {
+
+    .nav-container {
+        height: 65px;
+        position: relative;
+    }
+
+    .menu-icon {
+        display: block;
+        order: 2;
+        margin-left: auto;
+    }
+
+    .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: var(--blue);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 15px 25px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu-toggle:checked ~ .mobile-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        width: 100%;
+        margin: 0;
+        white-space: normal;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+    .nav-icons {
+        position: static;
+        margin-top: 10px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* PROGRESS */
+
 .progress-container {
     display: flex;
     align-items: center;
@@ -158,39 +236,31 @@ body {
     font-weight: bold;
 }
 
-.progress-step.active .step-circle {
-    border-color: var(--pink);
-    background: var(--pink);
-    color: var(--white);
-}
-
-.progress-step.active .step-label {
-    color: var(--pink);
-}
-
+.progress-step.active .step-circle,
 .progress-step.completed .step-circle {
-    border-color: var(--blue);
-    background: var(--blue);
+    border-color: var(--teal);
+    background: var(--teal);
     color: var(--white);
 }
 
+.progress-step.active .step-label,
 .progress-step.completed .step-label {
-    color: var(--blue);
+    color: var(--teal);
 }
 
 .progress-line {
     height: 2px;
     background: var(--border);
     width: 120px;
-    margin: 0 10px;
-    margin-bottom: 25px;
+    margin: 0 10px 25px;
 }
 
 .progress-line.completed {
-    background: var(--blue);
+    background: var(--teal);
 }
 
-/* ================= BUTTONS ================= */
+/* BUTTONS */
+
 .btn-primary {
     display: block;
     width: 100%;
@@ -203,7 +273,6 @@ body {
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
     transition: background 0.2s ease;
 }
 
@@ -215,7 +284,7 @@ body {
     display: block;
     width: 100%;
     padding: 14px;
-    background: transparent;
+    background: var(--white);
     color: var(--blue);
     border: 1px solid var(--blue);
     border-radius: 7px;
@@ -223,18 +292,19 @@ body {
     font-weight: bold;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
+    margin-top: 0;
     transition: all 0.2s ease;
-    margin-top: 15px;
 }
 
 .btn-secondary:hover {
     background: rgba(0, 26, 100, 0.05);
 }
 
-/* ================= CONFIRMATION SPECIFIC ================= */
+/* CONFIRMATION */
+
 .confirmation-container {
     max-width: 650px;
+    width: 90%;
     margin: 40px auto;
     text-align: center;
 }
@@ -243,7 +313,7 @@ body {
     width: 88px;
     height: 88px;
     border-radius: 50%;
-    background: var(--apricot);
+    background: var(--teal);
     color: var(--blue);
     display: flex;
     align-items: center;
@@ -251,7 +321,7 @@ body {
     font-size: 35px;
     margin: 0 auto 25px;
     border: 5px solid var(--white);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .confirmation-card {
@@ -266,6 +336,8 @@ body {
 .conf-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 15px;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
 }
@@ -290,4 +362,91 @@ body {
     color: var(--blue);
     font-weight: bold;
     font-size: 14px;
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.amount-row {
+    background: #fafafa;
+    margin: 15px -30px -30px;
+    padding: 25px 30px;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    border-top: 1px dashed var(--border);
+}
+
+.amount-row .conf-label {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.amount-row .conf-value {
+    color: var(--pink);
+    font-size: 22px;
+}
+
+/* ACTION BUTTONS */
+
+.confirmation-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.confirmation-actions button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+        padding: 25px 0;
+    }
+
+    .confirmation-container {
+        margin: 25px auto;
+    }
+
+    .confirmation-card {
+        padding: 20px;
+    }
+
+    .amount-row {
+        margin: 15px -20px -20px;
+        padding: 20px;
+    }
+
+    .conf-row {
+        gap: 10px;
+    }
+
+    .conf-label,
+    .conf-value {
+        font-size: 12px;
+    }
+
+    .amount-row .conf-value {
+        font-size: 18px;
+    }
+
+    .progress-step {
+        width: 65px;
+    }
+
+    .progress-line {
+        width: 45px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .confirmation-actions {
+        flex-direction: column;
+    }
 }
