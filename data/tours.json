@@ -1,0 +1,463 @@
+
+[
+    {
+        "id": 1,
+        "name": "Goa Beach Escape",
+        "destination": "Goa",
+        "price": 8999,
+        "duration": 3,
+        "type": "Beach",
+        "rating": 4.5,
+        "image": "../images/goa-1.jpg",
+        "images": [
+            "../images/goa-1.jpg",
+            "../images/goa-2.jpg",
+            "../images/goa-3.jpg",
+            "../images/goa-4.jpg"
+        ],
+        "description": "Golden beaches, Portuguese-era churches and lively beach shacks along India's west coast.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival in Goa and Beach Visit",
+                "description": "Arrive in Goa and check in to your hotel. Relax for some time and visit Baga Beach in the evening. Enjoy the beautiful sunset and explore nearby beach shacks."
+            },
+            {
+                "day": "Day 2",
+                "title": "North Goa Sightseeing",
+                "description": "Visit Fort Aguada, Calangute Beach, Candolim Beach and Anjuna Beach. Enjoy beach activities, shopping and local Goan food."
+            },
+            {
+                "day": "Day 3",
+                "title": "South Goa and Departure",
+                "description": "Enjoy breakfast and explore nearby attractions. Visit a local market before checking out and departing from Goa."
+            }
+        ],
+        "included": [
+            "2 nights hotel accommodation",
+            "Daily breakfast",
+            "North Goa sightseeing",
+            "Local transfers as per itinerary",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight or train tickets",
+            "Lunch and dinner",
+            "Water sports and adventure activities",
+            "Personal shopping expenses",
+            "Entry tickets not mentioned in the package"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Manali Hills Adventure",
+        "destination": "Manali",
+        "price": 14499,
+        "duration": 5,
+        "type": "Adventure",
+        "rating": 4.8,
+        "image": "../images/manali-1.jpg",
+        "images": [
+            "../images/manali-1.jpg",
+            "../images/manali-2.jpg",
+            "../images/manali-3.jpg",
+            "../images/manali-4.jpg"
+        ],
+        "description": "Gateway to the Himalayas — snow-capped peaks, Solang Valley and Rohtang Pass.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival in Manali",
+                "description": "Arrive in Manali and check in to your hotel. Relax and explore Mall Road in the evening. Enjoy the beautiful mountain atmosphere."
+            },
+            {
+                "day": "Day 2",
+                "title": "Local Manali Sightseeing",
+                "description": "Visit Hadimba Devi Temple, Manu Temple, Vashisht Hot Springs and the beautiful Van Vihar. Explore local markets in the evening."
+            },
+            {
+                "day": "Day 3",
+                "title": "Solang Valley Adventure",
+                "description": "Visit Solang Valley and enjoy panoramic Himalayan views. You can try activities such as paragliding, ropeway rides and other adventure sports at additional cost."
+            },
+            {
+                "day": "Day 4",
+                "title": "Mountain Excursion",
+                "description": "Enjoy a scenic mountain excursion towards the snow points or Rohtang Pass, subject to weather, permits and road conditions."
+            },
+            {
+                "day": "Day 5",
+                "title": "Departure from Manali",
+                "description": "Enjoy breakfast, complete hotel check-out and depart from Manali with wonderful memories."
+            }
+        ],
+        "included": [
+            "4 nights hotel accommodation",
+            "Daily breakfast",
+            "Local Manali sightseeing",
+            "Solang Valley excursion",
+            "Local transfers as per itinerary",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight or train tickets",
+            "Lunch and dinner",
+            "Adventure sports activities",
+            "Rohtang Pass permits and special vehicle charges",
+            "Personal expenses",
+            "Anything not mentioned in inclusions"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Kerala Backwaters",
+        "destination": "Kerala",
+        "price": 11999,
+        "duration": 4,
+        "type": "Nature",
+        "rating": 4.6,
+        "image": "../images/kerala-1.jpg",
+        "images": [
+            "../images/kerala-1.jpg",
+            "../images/kerala-2.jpg",
+            "../images/kerala-3.jpg",
+            "../images/kerala-4.jpg"
+        ],
+        "description": "Cruise the palm-fringed backwaters of Vembanad Lake on a traditional houseboat.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival in Kochi",
+                "description": "Arrive in Kochi and check in to your hotel. Visit Fort Kochi, Chinese Fishing Nets and nearby local markets."
+            },
+            {
+                "day": "Day 2",
+                "title": "Journey to Munnar",
+                "description": "Travel towards Munnar through beautiful green landscapes and waterfalls. Visit tea gardens and enjoy the pleasant hill station atmosphere."
+            },
+            {
+                "day": "Day 3",
+                "title": "Alleppey Backwater Experience",
+                "description": "Travel to Alleppey and enjoy a scenic backwater cruise. Experience traditional Kerala houseboats and beautiful views of coconut trees and villages."
+            },
+            {
+                "day": "Day 4",
+                "title": "Departure",
+                "description": "Enjoy breakfast and some free time. Check out from the hotel and depart with memorable experiences of Kerala."
+            }
+        ],
+        "included": [
+            "3 nights accommodation",
+            "Daily breakfast",
+            "Local sightseeing as per itinerary",
+            "Backwater cruise experience",
+            "Transfers between destinations",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight or train tickets",
+            "Lunch and dinner",
+            "Personal expenses",
+            "Ayurvedic treatments and spa services",
+            "Additional boat activities",
+            "Entry tickets not mentioned in the package"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Royal Rajasthan Trail",
+        "destination": "Rajasthan",
+        "price": 16999,
+        "duration": 6,
+        "type": "Heritage",
+        "rating": 4.4,
+        "image": "../images/rajasthan-1.jpg",
+        "images": [
+            "../images/rajasthan-1.jpg",
+            "../images/rajasthan-2.jpg",
+            "../images/rajasthan-3.jpg",
+            "../images/rajasthan-4.jpg"
+        ],
+        "description": "Explore the Pink City — Hawa Mahal, Amber Fort and royal Rajputana heritage.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival in Jaipur",
+                "description": "Arrive in Jaipur and check in to your hotel. Explore local markets and enjoy traditional Rajasthani food."
+            },
+            {
+                "day": "Day 2",
+                "title": "Jaipur Forts and Palaces",
+                "description": "Visit Amber Fort, Hawa Mahal and City Palace. Discover the royal history and architecture of Jaipur."
+            },
+            {
+                "day": "Day 3",
+                "title": "Jaipur to Jodhpur",
+                "description": "Travel to Jodhpur and check in to your hotel. Explore the famous Clock Tower Market and nearby streets."
+            },
+            {
+                "day": "Day 4",
+                "title": "Jodhpur Heritage Tour",
+                "description": "Visit Mehrangarh Fort, Jaswant Thada and Umaid Bhawan Palace. Enjoy the beautiful blue streets of the city."
+            },
+            {
+                "day": "Day 5",
+                "title": "Explore Udaipur",
+                "description": "Travel towards Udaipur and explore Lake Pichola, City Palace and the beautiful lakeside surroundings."
+            },
+            {
+                "day": "Day 6",
+                "title": "Departure",
+                "description": "Enjoy breakfast and some free time for shopping. Complete check-out and depart from Rajasthan."
+            }
+        ],
+        "included": [
+            "5 nights hotel accommodation",
+            "Daily breakfast",
+            "Jaipur local sightseeing",
+            "Jodhpur and Udaipur sightseeing",
+            "Intercity transfers as per itinerary",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight or train tickets",
+            "Lunch and dinner",
+            "Monument entry fees",
+            "Guide charges unless mentioned",
+            "Shopping and personal expenses",
+            "Cultural show tickets"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Rishikesh Spiritual Journey",
+        "destination": "Rishikesh",
+        "price": 5499,
+        "duration": 2,
+        "type": "Religious",
+        "rating": 4.9,
+        "image": "../images/rishikesh-1.jpg",
+        "images": [
+            "../images/rishikesh-1.jpg",
+            "../images/rishikesh-2.jpg",
+            "../images/rishikesh-3.jpg",
+            "../images/rishikesh-4.jpg"
+        ],
+        "description": "Yoga capital of the world, set on the banks of the holy Ganga near Laxman Jhula.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival and Ganga Aarti",
+                "description": "Arrive in Rishikesh and check in to your accommodation. Visit Ram Jhula and explore the Ganga riverbank. In the evening, attend the famous Ganga Aarti at Triveni Ghat."
+            },
+            {
+                "day": "Day 2",
+                "title": "Temples and Spiritual Exploration",
+                "description": "Start your day with a peaceful yoga session. Visit Neer Garh Waterfall or nearby temples and enjoy the peaceful surroundings before departure."
+            }
+        ],
+        "included": [
+            "1 night accommodation",
+            "Daily breakfast",
+            "Local sightseeing",
+            "Ganga Aarti visit",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight or train tickets",
+            "Lunch and dinner",
+            "Yoga classes unless mentioned",
+            "River rafting and adventure activities",
+            "Personal expenses",
+            "Temple donations"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Family Fun Resort Getaway",
+        "destination": "Lonavala",
+        "price": 9499,
+        "duration": 3,
+        "type": "Family",
+        "rating": 4.3,
+        "image": "../images/lonavala-1.jpg",
+        "images": [
+            "../images/lonavala-1.jpg",
+            "../images/lonavala-2.jpg",
+            "../images/lonavala-3.jpg",
+            "../images/lonavala-4.jpg"
+        ],
+        "description": "Misty hill station in the Western Ghats, known for waterfalls, forts and valley views.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival and Resort Stay",
+                "description": "Arrive in Lonavala and check in to your family resort. Enjoy the resort facilities and spend a relaxing evening with your family."
+            },
+            {
+                "day": "Day 2",
+                "title": "Lonavala Sightseeing",
+                "description": "Visit Bhushi Dam, Tiger Point and Lonavala Lake. Enjoy scenic valley views and explore local markets."
+            },
+            {
+                "day": "Day 3",
+                "title": "Nature Exploration and Departure",
+                "description": "Enjoy breakfast and visit nearby attractions such as Karla Caves, depending on available time. Complete check-out and depart."
+            }
+        ],
+        "included": [
+            "2 nights resort accommodation",
+            "Daily breakfast",
+            "Local sightseeing",
+            "Resort facilities as per property rules",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight or train tickets",
+            "Lunch and dinner",
+            "Adventure activities",
+            "Entry fees at attractions",
+            "Personal shopping expenses",
+            "Additional resort services"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Andaman Island Bliss",
+        "destination": "Andaman",
+        "price": 22999,
+        "duration": 5,
+        "type": "Beach",
+        "rating": 4.7,
+        "image": "../images/andaman-1.jpg",
+        "images": [
+            "../images/andaman-1.jpg",
+            "../images/andaman-2.jpg",
+            "../images/andaman-3.jpg",
+            "../images/andaman-4.jpg"
+        ],
+        "description": "Turquoise waters and coral reefs at Radhanagar Beach, Havelock Island.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival in Port Blair",
+                "description": "Arrive at Port Blair and check in to your hotel. Visit Cellular Jail and enjoy the Light and Sound Show in the evening."
+            },
+            {
+                "day": "Day 2",
+                "title": "Journey to Havelock Island",
+                "description": "Travel by ferry to Havelock Island. Check in to your accommodation and visit the beautiful Radhanagar Beach."
+            },
+            {
+                "day": "Day 3",
+                "title": "Island and Water Activities",
+                "description": "Explore the beaches of Havelock Island. Enjoy optional activities such as snorkeling and scuba diving at additional cost."
+            },
+            {
+                "day": "Day 4",
+                "title": "Return to Port Blair",
+                "description": "Travel back to Port Blair by ferry. Enjoy some free time exploring local markets and nearby attractions."
+            },
+            {
+                "day": "Day 5",
+                "title": "Departure",
+                "description": "Enjoy breakfast, complete hotel check-out and transfer to the airport for your departure."
+            }
+        ],
+        "included": [
+            "4 nights accommodation",
+            "Daily breakfast",
+            "Ferry transfers as per itinerary",
+            "Port Blair and Havelock sightseeing",
+            "Local transfers as per itinerary",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight tickets",
+            "Lunch and dinner",
+            "Scuba diving and snorkeling charges",
+            "Water sports activities",
+            "Personal expenses",
+            "Additional ferry or permit charges"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Ladakh Mountain Expedition",
+        "destination": "Ladakh",
+        "price": 24999,
+        "duration": 7,
+        "type": "Adventure",
+        "rating": 4.9,
+        "image": "../images/ladakh-1.jpg",
+        "images": [
+            "../images/ladakh-1.jpg",
+            "../images/ladakh-2.jpg",
+            "../images/ladakh-3.jpg",
+            "../images/ladakh-4.jpg"
+        ],
+        "description": "High-altitude desert landscapes, Buddhist monasteries and the stunning Pangong Lake.",
+        "detailsPage": "tour-details.html",
+        "itinerary": [
+            {
+                "day": "Day 1",
+                "title": "Arrival in Leh",
+                "description": "Arrive in Leh and check in to your hotel. Rest and acclimatize to the high altitude. Avoid strenuous activities."
+            },
+            {
+                "day": "Day 2",
+                "title": "Leh Local Sightseeing",
+                "description": "After sufficient rest, visit Shanti Stupa, Leh Palace and the local market. Enjoy the beautiful views of the surrounding mountains."
+            },
+            {
+                "day": "Day 3",
+                "title": "Monastery Exploration",
+                "description": "Visit Thiksey Monastery, Shey Palace and nearby cultural attractions. Experience Ladakh's Buddhist heritage."
+            },
+            {
+                "day": "Day 4",
+                "title": "Nubra Valley Expedition",
+                "description": "Travel through the scenic Khardung La route towards Nubra Valley, subject to road and weather conditions. Explore the beautiful valley."
+            },
+            {
+                "day": "Day 5",
+                "title": "Pangong Lake Excursion",
+                "description": "Travel towards the stunning Pangong Lake. Enjoy its changing blue shades and spectacular mountain scenery."
+            },
+            {
+                "day": "Day 6",
+                "title": "Return to Leh",
+                "description": "Return to Leh and enjoy some free time. Explore local markets and shop for souvenirs."
+            },
+            {
+                "day": "Day 7",
+                "title": "Departure from Leh",
+                "description": "Enjoy breakfast and complete hotel check-out. Transfer to the airport and depart with unforgettable memories."
+            }
+        ],
+        "included": [
+            "6 nights accommodation",
+            "Daily breakfast",
+            "Local sightseeing as per itinerary",
+            "Nubra Valley and Pangong Lake excursion",
+            "Transfers by vehicle as per itinerary",
+            "Travel assistance"
+        ],
+        "excluded": [
+            "Flight tickets",
+            "Lunch and dinner",
+            "Inner Line Permits and applicable fees unless mentioned",
+            "Adventure activities",
+            "Personal expenses",
+            "Medical and travel insurance",
+            "Additional charges due to weather or road closures"
+        ]
+    }
+]
