@@ -1,378 +1,279 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TravelGo | Discover Your Next Journey</title>
-<link rel="stylesheet" href="../css/style.css" />
-<link rel="stylesheet" href="../css/home.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGo | Home</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
+<!-- NAVBAR -->
+
 <nav class="navbar">
-  <div class="container">
-    <a href="index.html" class="logo">TravelGo<span>.</span></a>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="destinations.html">Destinations</a></li>
-      <li><a href="tours.html">Tours</a></li>
-      <li><a href="index.html#about">About Us</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-    <div class="nav-icons">
-      <a href="wishlist.html" class="icon-btn">&#9825;</a>
-      <a href="profile.html" class="icon-btn">&#128100;</a>
+    <div class="container">
+        <a href="index.html" class="logo">TravelGo</a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <div class="mobile-menu">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <a href="wishlist.html" aria-label="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+                <a href="profile.html" aria-label="Profile">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 </nav>
 
-<section class="hero">
-  <div class="container">
-    <div>
-      <h1>Find the trip that finds you.</h1>
-      <p>Handpicked destinations, honest pricing and tour guides who know their cities like the back of their hand. Plan your next escape in minutes.</p>
-      <a href="destinations.html" class="btn btn-primary">Start Exploring</a>
-    </div>
-    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1200&auto=format&fit=crop" alt="Mountain lake at sunrise">
-  </div>
+<!-- HERO SECTION -->
 
-  <div class="container">
-    <div class="search-box">
-      <form>
-        <div>
-          <label for="destination">Destination</label>
-          <select id="destination">
-            <option value="">Where do you want to go?</option>
-            <option>Goa, India</option>
-            <option>Manali, India</option>
-            <option>Kerala, India</option>
-            <option>Jaipur, India</option>
-            <option>Rishikesh, India</option>
-            <option>Lonavala, India</option>
-            <option>Port Blair, India</option>
-            <option>Leh, India</option>
-          </select>
+<section class="home-hero">
+    <div class="container home-hero-content">
+
+        <div class="hero-text">
+            <span class="hero-tag">EXPLORE INDIA WITH TRAVELGO</span>
+
+            <h1>Discover Places.<br> Create Memories.</h1>
+
+            <p>
+                Explore beautiful destinations, experience new adventures
+                and make every journey unforgettable. Find the perfect
+                tour package for your next escape.
+            </p>
+
+            <a href="tours.html" class="btn btn-primary hero-btn">
+                Explore Tours <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
-        <div>
-          <label for="travel-date">Travel Date</label>
-          <input type="date" id="travel-date">
-        </div>
-        <div>
-          <label for="travellers">Travellers</label>
-          <input type="number" id="travellers" min="1" value="2">
-        </div>
-        <div>
-          <button type="submit" class="btn btn-primary btn-full">Search</button>
-        </div>
-      </form>
+
+        <div class="hero-image">
+    <img src="../images/ladakh-1.jpg" alt="Beautiful Ladakh landscape">
+</div>
+
     </div>
-  </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Popular Destinations</h2>
-      <p>The places travellers are booking the most right now.</p>
-    </div>
-    <div class="grid grid-4">
+<!-- FEATURED TOURS -->
 
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Goa%20Beach.jpg?width=600" alt="Goa beach">
-        <div class="card-body">
-          <h3>Goa, India</h3>
-          <p>Beach</p>
-          <p>Rating: 4.5 / 5</p>
-        </div>
-      </a>
+<section class="home-section featured-section">
+    <div class="container">
 
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manali%20,Himachal%20Pradesh,%20India.jpg?width=600" alt="Manali">
-        <div class="card-body">
-          <h3>Manali, India</h3>
-          <p>Adventure</p>
-          <p>Rating: 4.8 / 5</p>
+        <div class="home-section-heading">
+            <span>EXPLORE AND EXPERIENCE</span>
+            <h2>Featured Tour Packages</h2>
+            <p>Handpicked journeys for your next memorable adventure.</p>
         </div>
-      </a>
 
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kerala%20backwaters,%20Vembanad%20Lake,%20Houseboats,%20India.jpg?width=600" alt="Kerala backwaters">
-        <div class="card-body">
-          <h3>Kerala, India</h3>
-          <p>Nature</p>
-          <p>Rating: 4.6 / 5</p>
+        <div class="home-tour-grid" id="featured-tours">
+            <p>Loading tour packages...</p>
         </div>
-      </a>
-
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hawa%20Mahal,%20Jaipur,%20Rajasthan.JPG?width=600" alt="Hawa Mahal Jaipur">
-        <div class="card-body">
-          <h3>Jaipur, India</h3>
-          <p>Heritage</p>
-          <p>Rating: 4.4 / 5</p>
-        </div>
-      </a>
-
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laxman%20Jhula,%20Rishikesh,%20Uttaranchal.jpg?width=600" alt="Rishikesh">
-        <div class="card-body">
-          <h3>Rishikesh, India</h3>
-          <p>Religious</p>
-          <p>Rating: 4.9 / 5</p>
-        </div>
-      </a>
-
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Western%20Ghats(Lonavala).jpg?width=600" alt="Lonavala">
-        <div class="card-body">
-          <h3>Lonavala, India</h3>
-          <p>Family</p>
-          <p>Rating: 4.3 / 5</p>
-        </div>
-      </a>
-
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Radhanagar%20Beach,%20Havelock%20Island,%20Andaman,%20India.jpg?width=600" alt="Andaman">
-        <div class="card-body">
-          <h3>Port Blair, India</h3>
-          <p>Beach</p>
-          <p>Rating: 4.7 / 5</p>
-        </div>
-      </a>
-
-      <a href="destinations.html" class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pangong%20Lake,%20Ladakh,%20India%2006.jpg?width=600" alt="Ladakh">
-        <div class="card-body">
-          <h3>Leh, India</h3>
-          <p>Adventure</p>
-          <p>Rating: 4.9 / 5</p>
-        </div>
-      </a>
 
     </div>
-  </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Travel by Category</h2>
-      <p>Not sure where to start? Pick the kind of trip you're in the mood for.</p>
+
+<!-- WHY TRAVELGO -->
+
+<section class="home-section why-section">
+    <div class="container">
+
+        <div class="home-section-heading">
+            <span>THE TRAVELGO ADVANTAGE</span>
+            <h2>Why Travel With Us?</h2>
+            <p>We take care of the details so you can enjoy the journey.</p>
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Trusted Partners</h3>
+                <p>Explore tours with verified guides and reliable travel partners.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <h3>Easy Booking</h3>
+                <p>Plan your trip with a simple and convenient booking experience.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+                <h3>Clear Pricing</h3>
+                <p>Know your tour costs upfront with transparent package pricing.</p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3>Travel Support</h3>
+                <p>Get assistance whenever you need help with your travel plans.</p>
+            </div>
+
+        </div>
     </div>
-    <div class="category-grid">
-      <a href="destinations.html" class="category-card">
-        <div class="icon">&#127946;</div>
-        <span>Adventure</span>
-      </a>
-      <a href="destinations.html" class="category-card">
-        <div class="icon">&#128106;</div>
-        <span>Family</span>
-      </a>
-      <a href="destinations.html" class="category-card">
-        <div class="icon">&#127963;</div>
-        <span>Heritage</span>
-      </a>
-      <a href="destinations.html" class="category-card">
-        <div class="icon">&#128327;</div>
-        <span>Religious</span>
-      </a>
-      <a href="destinations.html" class="category-card">
-        <div class="icon">&#127958;</div>
-        <span>Beach</span>
-      </a>
-      <a href="destinations.html" class="category-card">
-        <div class="icon">&#127794;</div>
-        <span>Nature</span>
-      </a>
-    </div>
-  </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Featured Tour Packages</h2>
-      <p>Complete itineraries with stays, guides and activities included.</p>
+<!-- CUSTOMER REVIEWS -->
+
+<section class="home-section reviews-section">
+    <div class="container">
+
+        <div class="home-section-heading">
+            <span>TRAVELLER EXPERIENCES</span>
+            <h2>What Our Travellers Say</h2>
+            <p>Discover what makes a journey with TravelGo special.</p>
+        </div>
+
+        <div class="review-grid">
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <p>
+                    "The Goa trip was amazing. Everything was well organised
+                    and the booking process was really simple."
+                </p>
+
+                <div class="review-person">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100" alt="Traveller">
+                    <div>
+                        <strong>Ayesha Khan</strong>
+                        <span>Goa Beach Escape</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <p>
+                    "A wonderful experience. The package was affordable
+                    and the entire journey was comfortable."
+                </p>
+
+                <div class="review-person">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Traveller">
+                    <div>
+                        <strong>Daniel Osei</strong>
+                        <span>Manali Hills Adventure</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+
+                <p>
+                    "The tour details were easy to understand.
+                    I had a great experience exploring Rishikesh."
+                </p>
+
+                <div class="review-person">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100" alt="Traveller">
+                    <div>
+                        <strong>Mei Lin</strong>
+                        <span>Rishikesh Journey</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="grid grid-3">
-
-      <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Goa%20Beach.jpg?width=700" alt="Goa Beach Escape">
-        <div class="card-body">
-          <h3>Goa Beach Escape</h3>
-          <p>Rating: 4.5 / 5</p>
-          <p>3 Days / 2 Nights, Goa</p>
-          <p class="price">Rs. 8,999 / person</p>
-          <a href="tours.html" class="btn btn-primary btn-small btn-full">View Details</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Manali%20,Himachal%20Pradesh,%20India.jpg?width=700" alt="Manali Hills Adventure">
-        <div class="card-body">
-          <h3>Manali Hills Adventure</h3>
-          <p>Rating: 4.8 / 5</p>
-          <p>5 Days / 4 Nights, Manali</p>
-          <p class="price">Rs. 14,499 / person</p>
-          <a href="tours.html" class="btn btn-primary btn-small btn-full">View Details</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Laxman%20Jhula,%20Rishikesh,%20Uttaranchal.jpg?width=700" alt="Rishikesh Spiritual Journey">
-        <div class="card-body">
-          <h3>Rishikesh Spiritual Journey</h3>
-          <p>Rating: 4.9 / 5</p>
-          <p>2 Days / 1 Night, Rishikesh</p>
-          <p class="price">Rs. 5,499 / person</p>
-          <a href="tours.html" class="btn btn-primary btn-small btn-full">View Details</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </section>
 
-<section class="section" style="background-color:#ffffff;">
-  <div class="container">
-    <div class="section-title">
-      <h2>Why Travel With Wander</h2>
-      <p>Everything you need for a trip that goes smoothly, from booking to landing back home.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-box">
-        <div class="icon">&#10003;</div>
-        <h3>Verified Tour Partners</h3>
-        <p>Every guide and operator on Wander is reviewed and checked before we list them.</p>
-      </div>
-      <div class="why-box">
-        <div class="icon">&#128197;</div>
-        <h3>Flexible Dates</h3>
-        <p>Change your travel dates easily and compare prices before you commit.</p>
-      </div>
-      <div class="why-box">
-        <div class="icon">&#8377;</div>
-        <h3>Transparent Pricing</h3>
-        <p>No hidden fees. What you see on the package card is what you pay.</p>
-      </div>
-      <div class="why-box">
-        <div class="icon">&#9742;</div>
-        <h3>24/7 Support</h3>
-        <p>Questions before, during or after your trip? Our team is always reachable.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-title">
-      <h2>What Travellers Say</h2>
-      <p>Real reviews from people who booked through Wander.</p>
-    </div>
-    <div class="review-grid">
-      <div class="review-card">
-        <div class="stars">Rating: 5 / 5</div>
-        <p>"Booking took five minutes and the itinerary matched exactly what was promised. Our Goa trip was fantastic."</p>
-        <div class="review-person">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop" alt="Ayesha Khan">
-          <div>
-            <strong>Ayesha Khan</strong>
-            <span>Goa Beach Escape</span>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">Rating: 5 / 5</div>
-        <p>"The search filters made it so easy to find a family-friendly package within our budget. Highly recommend."</p>
-        <div class="review-person">
-          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=100&auto=format&fit=crop" alt="Daniel Osei">
-          <div>
-            <strong>Daniel Osei</strong>
-            <span>Lonavala Family Getaway</span>
-          </div>
-        </div>
-      </div>
-      <div class="review-card">
-        <div class="stars">Rating: 4 / 5</div>
-        <p>"Great value for the price. Would love to see even more heritage tour options in future."</p>
-        <div class="review-person">
-          <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=100&auto=format&fit=crop" alt="Mei Lin">
-          <div>
-            <strong>Mei Lin</strong>
-            <span>Royal Rajasthan Trail</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="cta">
-      <div>
-        <h2>Your next destination is one click away.</h2>
-        <p>Browse every destination we offer and find the trip that's right for you.</p>
-      </div>
-      <a href="destinations.html" class="btn btn-outline" style="border-color:#ffffff;color:#ffffff;">Explore Destinations</a>
-    </div>
-  </div>
-</section>
-
-<section class="section info-section" id="about">
-  <div class="container">
-    <div class="info-grid">
-      <div class="info-box">
-        <h2>About Us</h2>
-        <p>Wander is a student-built travel platform that helps people discover destinations and book guided tours across India.</p>
-        <p>We started this project to make travel planning simple, honest and easy to understand, with clear pricing and no hidden surprises.</p>
-      </div>
-      <div class="info-box" id="contact">
-        <h2>Contact</h2>
-        <p>Email: hello@wander.com</p>
-        <p>Phone: +91 98765 43210</p>
-        <p>Address: GLA University, Mathura, Uttar Pradesh, India</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- FOOTER -->
 
 <footer class="footer">
-  <div class="container">
-    <div class="grid grid-4">
-      <div>
-        <h4>Wander</h4>
-        <p>A simple, honest way to discover destinations and book guided tours around the world.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="destinations.html">Destinations</a></li>
-          <li><a href="tours.html">Tours</a></li>
-          <li><a href="index.html#about">About Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Support</h4>
-        <ul>
-          <li><a href="index.html#contact">Contact Us</a></li>
-          <li><a href="wishlist.html">Wishlist</a></li>
-          <li><a href="profile.html">My Profile</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Stay Updated</h4>
-        <p>Get new destinations and offers in your inbox.</p>
-      </div>
+    <div class="container">
+
+        <div class="home-footer-grid">
+
+            <div id="about">
+                <h3>TravelGo</h3>
+                <p>
+                    Discover beautiful destinations and explore exciting
+                    guided tours across India. Make every journey memorable
+                    with TravelGo.
+                </p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                </ul>
+            </div>
+
+            <div id="contact">
+                <h4>Contact Us</h4>
+                <p><i class="fa-regular fa-envelope"></i> hello@travelgo.com</p>
+                <p><i class="fa-solid fa-phone"></i> +91 93114141220</p>
+                <p><i class="fa-solid fa-location-dot"></i> Mathura, Uttar Pradesh, India</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            Copyright 2026 TravelGo. All rights reserved.
+        </div>
+
     </div>
-    <div class="footer-bottom">
-      Copyright 2026 Wander. Built as a B.Tech CSE academic project, GLA University, Mathura.
-    </div>
-  </div>
 </footer>
 
 <script src="../js/data.js"></script>
