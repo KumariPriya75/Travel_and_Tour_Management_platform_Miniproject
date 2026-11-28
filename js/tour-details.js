@@ -52,6 +52,7 @@ fetch("../data/tours.json")
         loadingMessage.textContent = "Unable to load tour details. Please try again.";
     });
 
+// Display Tour Details
 function displayTour(tour) {
     tourName.textContent = tour.name;
     tourDestination.textContent = tour.destination;
@@ -73,8 +74,56 @@ function displayTour(tour) {
     displayItinerary(tour);
     displayIncludedExcluded(tour);
     setupTravelDate();
+    setupWishlist(tour);
 }
 
+// Wishlist Functionality
+
+function setupWishlist(tour) {
+    const wishlistInput = document.querySelector(".wishlist-full input");
+    const heartIcon = document.querySelector(".wishlist-full .heart-icon i");
+
+    if (!wishlistInput) return;
+
+    const WISHLIST_KEY = "travelgo-wishlist";
+
+    function getWishlist() {
+        return JSON.parse(localStorage.getItem(WISHLIST_KEY)) || [];
+    }
+
+    function updateHeart() {
+        const wishlist = getWishlist();
+        const isWishlisted = wishlist.includes(String(tour.id));
+
+        wishlistInput.checked = isWishlisted;
+
+        if (heartIcon) {
+            heartIcon.classList.toggle("fa-solid", isWishlisted);
+            heartIcon.classList.toggle("fa-regular", !isWishlisted);
+        }
+    }
+
+    updateHeart();
+
+    wishlistInput.addEventListener("change", function() {
+        let wishlist = getWishlist();
+        const tourId = String(tour.id);
+
+        if (wishlistInput.checked) {
+            if (!wishlist.includes(tourId)) {
+                wishlist.push(tourId);
+            }
+        } else {
+            wishlist = wishlist.filter(id => id !== tourId);
+        }
+
+        localStorage.setItem(WISHLIST_KEY, JSON.stringify(wishlist));
+        updateHeart();
+    });
+}
+
+
+// Display Gallery
 function displayGallery(tour) {
     const images = tour.images && tour.images.length
         ? tour.images
@@ -123,6 +172,7 @@ function displayGallery(tour) {
     });
 }
 
+// Display Highlights
 function displayHighlights(tour) {
     const defaultHighlights = [
         "Explore popular attractions",
@@ -144,6 +194,7 @@ function displayHighlights(tour) {
     });
 }
 
+// Display Itinerary
 function displayItinerary(tour) {
     itinerary.innerHTML = "";
 
@@ -173,6 +224,7 @@ function displayItinerary(tour) {
     });
 }
 
+// Display Included and Excluded
 function displayIncludedExcluded(tour) {
     included.innerHTML = "";
     excluded.innerHTML = "";
@@ -198,6 +250,7 @@ function displayIncludedExcluded(tour) {
     }
 }
 
+// Travel Date
 function setupTravelDate() {
     if (!travelDate) return;
 

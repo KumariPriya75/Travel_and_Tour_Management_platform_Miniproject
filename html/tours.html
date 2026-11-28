@@ -60,8 +60,17 @@
 
     <div class="tours-layout">
 
+        <!-- Mobile Filter Button -->
+        <button type="button" class="mobile-filter-toggle" id="mobile-filter-toggle"
+            aria-expanded="false" aria-controls="filter-sidebar">
+            <i class="fa-solid fa-sliders"></i>
+            Filters
+            <i class="fa-solid fa-chevron-down filter-arrow"></i>
+        </button>
+
         <!-- Filter Sidebar -->
-        <aside class="filter-sidebar">
+        <aside class="filter-sidebar" id="filter-sidebar">
+
             <form id="filter-form">
 
                 <div class="filter-group">
@@ -106,8 +115,10 @@
                     <label><input type="radio" name="rating" value="3"> 3★ &amp; above</label>
                 </div>
 
-                <button type="submit" class="btn-apply">Apply Filters</button>
-                <button type="reset" class="btn-clear">Clear All</button>
+                <div class="filter-buttons">
+                    <button type="submit" class="btn-apply">Apply Filters</button>
+                    <button type="reset" class="btn-clear">Clear All</button>
+                </div>
 
             </form>
         </aside>
@@ -125,16 +136,13 @@
                 </select>
             </div>
 
-            <!-- Tour Cards - Dynamically Loaded -->
             <section class="tour-grid" id="tour-grid">
             </section>
 
-            <!-- No Results Message -->
             <p id="no-results" style="display:none; text-align:center; padding:30px;">
                 No tours found. Try different search or filters.
             </p>
 
-            <!-- Pagination -->
             <nav class="pagination">
                 <a class="active" href="#">1</a>
                 <a href="#">2</a>
@@ -148,8 +156,30 @@
     <!-- Footer -->
     <footer class="site-footer">
         © 2026 TravelGo. All rights reserved.
-        Photos from <a href="https://www.pexels.com">Pexels</a>.
     </footer>
+
+    <!-- Mobile Filter Functionality -->
+    <script>
+        const filterToggle = document.getElementById("mobile-filter-toggle");
+        const filterSidebar = document.getElementById("filter-sidebar");
+
+        filterToggle.addEventListener("click", function () {
+            const isOpen = filterSidebar.classList.toggle("show-filters");
+
+            filterToggle.setAttribute("aria-expanded", isOpen);
+            filterToggle.querySelector(".filter-arrow").classList.toggle("rotate", isOpen);
+        });
+
+        function closeMobileFilters() {
+            filterSidebar.classList.remove("show-filters");
+            filterToggle.setAttribute("aria-expanded", "false");
+            filterToggle.querySelector(".filter-arrow").classList.remove("rotate");
+        }
+        const mobileFilterForm = document.getElementById("filter-form");
+
+mobileFilterForm.addEventListener("submit", closeMobileFilters);
+mobileFilterForm.addEventListener("reset", closeMobileFilters);
+    </script>
 
     <script src="../js/tour.js"></script>
 
