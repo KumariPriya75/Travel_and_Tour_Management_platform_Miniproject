@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details | TravelGo</title>
+    <link rel="stylesheet" href="../css/tour_details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container">
+
+        <a href="index.html" class="logo">TravelGo</a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">
+            &#9776;
+        </label>
+
+        <div class="mobile-menu">
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html" class="active">Tours</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <a href="wishlist.html">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+
+                <a href="profile.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<p id="loading-message">Loading tour details...</p>
+
+<div id="tour-content" style="display: none;">
+
+    <div class="details-layout">
+
+        <main class="details-main">
+
+            <!-- Tour Gallery -->
+            <section class="gallery">
+                <div class="gallery-main" id="gallery-main"></div>
+                <div class="gallery-thumbs" id="gallery-thumbs"></div>
+            </section>
+
+            <!-- Tour Information -->
+            <section class="tour-header">
+                <h1 id="tour-name"></h1>
+
+                <p class="destination">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="tour-destination"></span>
+                </p>
+
+                <p class="rating" id="tour-rating"></p>
+
+                <p class="duration">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="tour-duration"></span>
+                </p>
+            </section>
+
+            <section>
+                <h2>Overview</h2>
+                <p id="tour-description"></p>
+            </section>
+
+            <section class="tour-highlights">
+                <h2>Tour Highlights</h2>
+                <ul id="tour-highlights"></ul>
+            </section>
+
+            <section class="itinerary">
+                <h2>Day-wise Itinerary</h2>
+                <div id="tour-itinerary"></div>
+            </section>
+
+            <section class="inclusions-exclusions">
+
+                <div class="included">
+                    <h3>Included</h3>
+                    <ul id="tour-included"></ul>
+                </div>
+
+                <div class="excluded">
+                    <h3>Excluded</h3>
+                    <ul id="tour-excluded"></ul>
+                </div>
+
+            </section>
+
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <details>
+                    <summary>What is the duration of this tour?</summary>
+                    <p id="faq-duration"></p>
+                </details>
+
+                <details>
+                    <summary>What is the destination of this tour?</summary>
+                    <p id="faq-destination"></p>
+                </details>
+
+                <details>
+                    <summary>Where can I find other tours?</summary>
+                    <p>Visit our Tours page to explore all available packages.</p>
+                </details>
+            </section>
+
+            <section>
+                <h2>Back to Tours</h2>
+                <a href="tours.html" class="btn-view">Explore All Tours</a>
+            </section>
+
+        </main>
+
+        <!-- Price and Date Card -->
+        <aside class="pricing-sidebar">
+
+            <p class="price" id="tour-price"></p>
+
+            <div class="available-dates">
+                <h3>Select Travel Date</h3>
+                <input type="date" id="travel-date">
+                <p id="selected-date"></p>
+            </div>
+
+            <label class="wishlist-full">
+                <input type="checkbox">
+                <span class="heart-icon">
+                    <i class="fa-regular fa-heart"></i>
+                </span>
+                Add to Wishlist
+            </label>
+
+            <a href="booking.html" class="btn-book-now">Book Now</a>
+
+        </aside>
+
+    </div>
+
+</div>
+
+<footer class="site-footer">
+    © 2026 TravelGo. All rights reserved.
+</footer>
+
+<script src="../js/tour-details.js"></script>
+
+</body>
+</html>
