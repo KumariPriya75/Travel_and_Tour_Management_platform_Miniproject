@@ -1,0 +1,107 @@
+
+var destinations = [
+  {
+    id: 1,
+    name: "Goa, India",
+    state: "Western India",
+    category: "Beach",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Goa%20Beach.jpg?width=600",
+    description: "Enjoy beautiful beaches, Portuguese architecture, lively markets and coastal experiences in Goa.",
+    famousFor: "Beaches, nightlife and Portuguese heritage",
+    highlights: ["Baga Beach", "Fort Aguada", "Basilica of Bom Jesus"],
+    bestTime: "November to February",
+    moods: ["Need a Break", "Beach Lover", "Fun Seeker"]
+  },
+  {
+    id: 2,
+    name: "Manali, India",
+    state: "Himachal Pradesh",
+    category: "Adventure",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Manali%20,Himachal%20Pradesh,%20India.jpg?width=600",
+    description: "Experience mountain views, scenic valleys, snow-covered landscapes and outdoor adventures.",
+    famousFor: "Mountains, snow and adventure",
+    highlights: ["Solang Valley", "Rohtang Pass", "Hadimba Temple"],
+    bestTime: "March to June and December to February",
+    moods: ["Adventure Seeker", "Mountain Lover", "Need a Break"]
+  },
+  {
+    id: 3,
+    name: "Kerala, India",
+    state: "South India",
+    category: "Nature",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Kerala%20backwaters,%20Vembanad%20Lake,%20Houseboats,%20India.jpg?width=600",
+    description: "Discover peaceful backwaters, green landscapes, tea gardens and beautiful coastal scenery.",
+    famousFor: "Backwaters, greenery and hill stations",
+    highlights: ["Alleppey Backwaters", "Munnar", "Thekkady"],
+    bestTime: "October to March",
+    moods: ["Nature Lover", "Peace Seeker", "Need a Break"]
+  },
+  {
+    id: 4,
+    name: "Jaipur, India",
+    state: "Rajasthan",
+    category: "Heritage",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Hawa%20Mahal,%20Jaipur,%20Rajasthan.JPG?width=600",
+    description: "Explore royal palaces, historic forts, colourful markets and the rich culture of Rajasthan.",
+    famousFor: "Royal palaces, forts and culture",
+    highlights: ["Hawa Mahal", "Amber Fort", "City Palace"],
+    bestTime: "October to March",
+    moods: ["Culture Explorer", "History Lover", "Photography Lover"]
+  },
+  {
+    id: 5,
+    name: "Rishikesh, India",
+    state: "Uttarakhand",
+    category: "Religious",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Laxman%20Jhula,%20Rishikesh,%20Uttaranchal.jpg?width=600",
+    description: "Find peace beside the Ganga, visit spiritual landmarks and enjoy outdoor activities.",
+    famousFor: "Yoga, spirituality and river rafting",
+    highlights: ["Lakshman Jhula area", "Triveni Ghat", "Neer Garh Waterfall"],
+    bestTime: "September to November and February to April",
+    moods: ["Peace Seeker", "Adventure Seeker", "Spiritual Explorer"]
+  },
+  {
+    id: 6,
+    name: "Lonavala, India",
+    state: "Maharashtra",
+    category: "Family",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Western%20Ghats(Lonavala).jpg?width=600",
+    description: "Enjoy green hills, waterfalls, scenic viewpoints and relaxing weekend escapes.",
+    famousFor: "Hill views, waterfalls and caves",
+    highlights: ["Tiger Point", "Karla Caves", "Bhushi Dam"],
+    bestTime: "June to September for monsoon scenery; October to February for pleasant weather",
+    moods: ["Need a Break", "Nature Lover", "Family Explorer"]
+  },
+  {
+    id: 7,
+    name: "Port Blair, India",
+    state: "Andaman and Nicobar Islands",
+    category: "Beach",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Radhanagar%20Beach,%20Havelock%20Island,%20Andaman,%20India.jpg?width=600",
+    description: "Explore tropical islands, clear waters, marine life and the history of the Andaman region.",
+    famousFor: "Island scenery, beaches and marine life",
+    highlights: ["Cellular Jail", "Corbyn's Cove", "North Bay Island"],
+    bestTime: "October to May",
+    moods: ["Beach Lover", "Nature Lover", "Peace Seeker"]
+  },
+  {
+    id: 8,
+    name: "Leh, India",
+    state: "Ladakh",
+    category: "Adventure",
+    featured: true,
+    image: "https://commons.wikimedia.org/wiki/Special:FilePath/Pangong%20Lake,%20Ladakh,%20India%2006.jpg?width=600",
+    description: "Discover dramatic mountain landscapes, high-altitude lakes, monasteries and unique Himalayan culture.",
+    famousFor: "High-altitude landscapes and mountain adventures",
+    highlights: ["Pangong Lake", "Nubra Valley", "Thiksey Monastery"],
+    bestTime: "May to September",
+    moods: ["Adventure Seeker", "Mountain Lover", "Photography Lover"]
+  }
+];
