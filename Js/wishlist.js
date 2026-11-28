@@ -1,189 +1,246 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.querySelector(".wishlist-grid");
-  let cards = Array.from(document.querySelectorAll(".travel-card"));
-  const countText = document.querySelector(".wishlist-top > span");
-  const summaryCount = document.querySelector(".summary-box strong");
-  const sortSelect = document.querySelector(".wishlist-top select");
-  const wishlistKey = "travelGoWishlistPlaces";
-  const legacyWishlistKey = "travelGoWishlist";
-  const seededKey = "travelGoWishlistSeeded";
-  const tours = {
-    "Goa Beach Escape":{
-      location: "Goa, India", category: "BEACH", image: "goa-1.jpg", rating: "4.5",
-      duration: "3 Days / 2 Nights", price: 8999, href: "tour-details-goa.html"
-    },
-    "Manali Hills Adventure":{
-      location: "Manali, India", category: "ADVENTURE", image: "manali-1.jpg", rating: "4.8",
-      duration: "5 Days /4 Nights", price: 14499, href: "tour-details-manali.html"
-    },
-    "Kerala Backwaters": {
-      location: "Kerala, India", category: "NATURE", image: "kerala-1.jpg", rating: "4.6",
-      duration: "4 Days / 3 Nights", price: 11999, href: "tour-details-kerala.html"
-    },
-    "Royal Rajasthan Trail": {
-      location: "Jaipur, India", category: "CULTURAL", image: "rajasthan-1.jpg", rating: "4.4",
-      duration: "6 Days / 5 Nights", price: 16999, href: "tour-details-rajasthan.html"
-    },
-    "Rishikesh Spiritual Journey": {
-      location: "Rishikesh, India", category: "CULTURAL", image: "rishikesh-1.jpg", rating: "4.9",
-      duration: "2 Days / 1 Night", price: 5499, href: "tour-details-rishikesh.html"
-    },
-    "Family Fun Resort Getaway": {
-      location: "Lonavala, India", category: "FAMILY", image: "lonavala-1.jpg", rating: "4.3",
-      duration: "3 Days / 2 Nights", price: 9499, href: "tour-details-lonavala.html"
-    },
-    "Andaman Island Bliss": {
-      location: "Port Blair, India", category: "BEACH", image: "andaman-1.jpg", rating: "4.7",
-      duration: "5 Days / 4 Nights", price: 22999, href: "tour-details-andaman.html"
-    },
-    "Ladakh Mountain Expedition": {
-      location: "Leh, India", category: "ADVENTURE", image: "ladakh-1.jpg", rating: "4.9",
-      duration: "7 Days / 6 Nights", price: 24999, href: "tour-details-ladakh.html"
+
+    const WISHLIST_KEY = "travelgo-wishlist";
+
+    const grid = document.getElementById("wishlist-grid");
+    const countText = document.getElementById("wishlist-count");
+    const summaryCount = document.getElementById("summary-count");
+    const sortSelect = document.getElementById("wishlist-sort");
+    const emptyMessage = document.getElementById("empty-wishlist");
+    const filters = document.querySelectorAll(".wishlist-sidebar input[type='checkbox']");
+
+    let tours = [];
+    let savedIds = [];
+
+    function getWishlist() {
+        try {
+            const data = JSON.parse(localStorage.getItem(WISHLIST_KEY) || "[]");
+            return Array.isArray(data) ? data.map(String) : [];
+        } catch {
+            return [];
+        }
     }
-  };
 
-  function readList(key) {
-    try {
-      const value = JSON.parse(localStorage.getItem(key) || "[]");
-      return Array.isArray(value) ? value.filter((name) => typeof name === "string") : [];
-    } catch {
-      return [];
+    function saveWishlist() {
+        localStorage.setItem(WISHLIST_KEY, JSON.stringify(savedIds));
     }
-  }
 
-  function getCardName(card) {
-    return card.querySelector("h2")?.textContent.trim() || "";
-  }
+    function getImagePath(image) {
+        if (!image) return "";
 
-  function element(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className) node.className = className;
-    if (text) node.textContent = text;
-    return node;
-  }
+        if (image.startsWith("../") || image.startsWith("/") || image.startsWith("http")) {
+            return image;
+        }
 
-  function createTourCard(name, tour) {
-    const card = element("article", "travel-card");
-    card.dataset.detailsHref = tour.href;
-
-    const imageArea = element("div", "card-image");
-    const image = element("img");
-    image.src = `../images/${tour.image}`;
-    image.alt = name;
-    imageArea.appendChild(image);
-    imageArea.appendChild(element("span", "category", tour.category));
-
-    const removeButton = element("button", "wishlist-heart");
-    removeButton.type = "button";
-    removeButton.setAttribute("aria-label", `Remove ${name} from wishlist`);
-    removeButton.appendChild(element("i", "fa-solid fa-heart"));
-    imageArea.appendChild(removeButton);
-
-    const body = element("div", "card-body");
-    body.appendChild(element("h2", "", name));
-
-    const place = element("div", "place");
-    place.appendChild(element("i", "fa-solid fa-location-dot"));
-    place.appendChild(document.createTextNode(` ${tour.location}`));
-    body.appendChild(place);
-
-    const rating = element("div", "rating", "★★★★★");
-    rating.appendChild(element("span", "", tour.rating));
-    body.appendChild(rating);
-
-    const duration = element("div", "duration");
-    duration.appendChild(element("i", "fa-regular fa-clock"));
-    duration.appendChild(document.createTextNode(` ${tour.duration}`));
-    body.appendChild(duration);
-
-    const footer = element("div", "card-footer");
-    const price = element("div");
-    price.appendChild(element("small", "", "Starting from"));
-    price.appendChild(element("strong", "", `₹${tour.price.toLocaleString("en-IN")}`));
-    footer.appendChild(price);
-    footer.appendChild(element("button", "", "View Trip"));
-    body.appendChild(footer);
-
-    card.append(imageArea, body);
-    return card;
-  }
-
-  function getPrice(card) {
-    return Number((card.querySelector(".card-footer strong")?.textContent.match(/[\d,]+/) || ["0"])[0].replace(/,/g, ""));
-  }
-
-  function getRating(card) {
-    return Number(card.querySelector(".rating span")?.textContent || 0);
-  }
-
-  const defaultPlaces = cards.map(getCardName).filter(Boolean);
-  let savedPlaces = readList(wishlistKey);
-  if (localStorage.getItem(seededKey) !== "true") {
-    savedPlaces.push(...defaultPlaces);
-  }
-  savedPlaces.push(...readList(legacyWishlistKey));
-  savedPlaces = [...new Set(savedPlaces)];
-  localStorage.setItem(wishlistKey, JSON.stringify(savedPlaces));
-  localStorage.setItem(seededKey, "true");
-  localStorage.removeItem(legacyWishlistKey);
-
-  cards.slice().forEach((card) => {
-    if (!savedPlaces.includes(getCardName(card))) {
-      card.remove();
+        return "../images/" + image;
     }
-  });
 
-  savedPlaces.forEach((name) => {
-    if (tours[name] && !Array.from(grid.querySelectorAll(".travel-card")).some((card) => getCardName(card) === name)) {
-      grid.appendChild(createTourCard(name, tours[name]));
+    function getCategory(tour) {
+        const type = String(tour.type || "").toLowerCase();
+        const details = (tour.name + " " + tour.destination + " " + type).toLowerCase();
+
+        if (type.includes("beach") || details.includes("beach") || details.includes("andaman")) {
+            return "beach";
+        }
+
+        if (type.includes("mountain") || details.includes("mountain") ||
+            details.includes("manali") || details.includes("ladakh")) {
+            return "mountain";
+        }
+
+        if (type.includes("adventure") || details.includes("adventure") ||
+            details.includes("rishikesh")) {
+            return "adventure";
+        }
+
+        if (type.includes("cultural") || type.includes("religious") ||
+            details.includes("rajasthan")) {
+            return "cultural";
+        }
+
+        return type || "other";
     }
-  });
-  cards = Array.from(grid.querySelectorAll(".travel-card"));
 
-  function updateCounts() {
-    const visible = cards.filter((card) => card.style.display !== "none").length;
-    if (countText) countText.textContent = `${visible} trip${visible === 1 ? "" : "s"} saved`;
-    if (summaryCount) summaryCount.textContent = String(savedPlaces.length).padStart(2, "0");
-  }
+    function createCard(tour) {
+        const card = document.createElement("article");
+        card.className = "travel-card";
+        card.dataset.id = String(tour.id);
+        card.dataset.category = getCategory(tour);
 
-  cards.forEach((card) => {
-    card.querySelector(".wishlist-heart")?.addEventListener("click", () => {
-      const name = getCardName(card);
-      savedPlaces = savedPlaces.filter((place) => place !== name);
-      localStorage.setItem(wishlistKey, JSON.stringify(savedPlaces));
-      card.remove();
-      cards = cards.filter((item) => item !== card);
-      updateCounts();
+        const imageArea = document.createElement("div");
+        imageArea.className = "card-image";
+
+        const image = document.createElement("img");
+        const tourImage = tour.images && tour.images.length
+            ? tour.images[0]
+            : tour.image;
+
+        image.src = getImagePath(tourImage);
+        image.alt = tour.name;
+
+        imageArea.appendChild(image);
+
+        const category = document.createElement("span");
+        category.className = "category";
+        category.textContent = String(tour.type || "TOUR").toUpperCase();
+        imageArea.appendChild(category);
+
+        const heart = document.createElement("button");
+        heart.className = "wishlist-heart";
+        heart.type = "button";
+        heart.setAttribute("aria-label", "Remove from wishlist");
+        heart.innerHTML = '<i class="fa-solid fa-heart"></i>';
+
+        heart.addEventListener("click", () => {
+            savedIds = savedIds.filter(id => id !== String(tour.id));
+            saveWishlist();
+            renderWishlist();
+        });
+
+        imageArea.appendChild(heart);
+
+        const body = document.createElement("div");
+        body.className = "card-body";
+
+        const name = document.createElement("h2");
+        name.textContent = tour.name;
+        body.appendChild(name);
+
+        const place = document.createElement("div");
+        place.className = "place";
+        place.innerHTML = '<i class="fa-solid fa-location-dot"></i> ';
+        place.appendChild(document.createTextNode(tour.destination || ""));
+        body.appendChild(place);
+
+        const rating = document.createElement("div");
+        rating.className = "rating";
+        rating.appendChild(document.createTextNode("★★★★★ "));
+
+        const ratingValue = document.createElement("span");
+        ratingValue.textContent = tour.rating || "N/A";
+        rating.appendChild(ratingValue);
+        body.appendChild(rating);
+
+        const duration = document.createElement("div");
+        duration.className = "duration";
+        duration.innerHTML = '<i class="fa-regular fa-clock"></i> ';
+
+        const days = Number(tour.duration);
+        duration.appendChild(document.createTextNode(
+            Number.isFinite(days) && days > 0
+                ? `${days} Days`
+                : (tour.duration || "Duration not available")
+        ));
+        body.appendChild(duration);
+
+        const footer = document.createElement("div");
+        footer.className = "card-footer";
+
+        const priceBox = document.createElement("div");
+
+        const small = document.createElement("small");
+        small.textContent = "Starting from";
+
+        const price = document.createElement("strong");
+        price.textContent = "₹" + Number(tour.price || 0).toLocaleString("en-IN");
+
+        priceBox.append(small, price);
+        footer.appendChild(priceBox);
+
+        const viewButton = document.createElement("button");
+        viewButton.type = "button";
+        viewButton.textContent = "View Trip";
+
+        viewButton.addEventListener("click", () => {
+            window.location.href = `tour-details.html?id=${encodeURIComponent(tour.id)}`;
+        });
+
+        footer.appendChild(viewButton);
+        body.appendChild(footer);
+
+        card.append(imageArea, body);
+
+        return card;
+    }
+
+    function renderWishlist() {
+        savedIds = getWishlist();
+
+        const savedTours = tours.filter(tour =>
+            savedIds.includes(String(tour.id))
+        );
+
+        const selectedFilters = Array.from(filters)
+            .filter(filter => filter.checked)
+            .map(filter => filter.value);
+
+        let displayedTours = savedTours.filter(tour =>
+            selectedFilters.length === 0 ||
+            selectedFilters.includes(getCategory(tour))
+        );
+
+        if (sortSelect.value === "low") {
+            displayedTours.sort((a, b) => Number(a.price) - Number(b.price));
+        } else if (sortSelect.value === "high") {
+            displayedTours.sort((a, b) => Number(b.price) - Number(a.price));
+        } else if (sortSelect.value === "popular") {
+            displayedTours.sort((a, b) => Number(b.rating) - Number(a.rating));
+        }
+
+        grid.innerHTML = "";
+
+        displayedTours.forEach(tour => {
+            grid.appendChild(createCard(tour));
+        });
+
+        countText.textContent =
+            `${displayedTours.length} trip${displayedTours.length === 1 ? "" : "s"} saved`;
+
+        summaryCount.textContent = String(savedTours.length).padStart(2, "0");
+
+        emptyMessage.style.display = savedTours.length === 0 ? "block" : "none";
+grid.style.display = savedTours.length === 0 ? "none" : "grid";
+        if (savedTours.length > 0 && displayedTours.length === 0) {
+            emptyMessage.textContent = "No tours match the selected filters.";
+            emptyMessage.style.display = "block";
+        } else {
+            emptyMessage.textContent =
+                "Your wishlist is empty. Explore tours and add your favourites!";
+        }
+    }
+
+    fetch("../data/tours.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Unable to load tours.json");
+            }
+
+            return response.json();
+        })
+        .then(data => {
+            tours = data;
+            renderWishlist();
+        })
+        .catch(error => {
+            console.error("Error loading tours:", error);
+            grid.innerHTML = "<p>Unable to load wishlist. Please try again.</p>";
+        });
+
+    filters.forEach(filter => {
+        filter.addEventListener("change", renderWishlist);
     });
 
-    card.querySelector(".card-footer button")?.addEventListener("click", () => {
-      window.location.href = card.dataset.detailsHref || "tours.html";
+    sortSelect.addEventListener("change", renderWishlist);
+
+    document.querySelector(".explore-btn").addEventListener("click", () => {
+        window.location.href = "tours.html";
     });
-  });
 
-  document.querySelectorAll(".wishlist-sidebar input[type='checkbox']").forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
-      const selected = Array.from(document.querySelectorAll(".wishlist-sidebar input:checked"))
-        .map((input) => input.parentElement.textContent.trim().toUpperCase());
-      cards.forEach((card) => {
-        const category = card.querySelector(".category")?.textContent.trim().toUpperCase() || "";
-        card.style.display = selected.length === 0 || selected.includes(category) ? "" : "none";
-      });
-      updateCounts();
+    window.addEventListener("storage", event => {
+        if (event.key === WISHLIST_KEY) {
+            renderWishlist();
+        }
     });
-  });
 
-  sortSelect?.addEventListener("change", () => {
-    const sorted = [...cards];
-    if (sortSelect.selectedIndex === 2) sorted.sort((a, b) => getPrice(a) - getPrice(b));
-    if (sortSelect.selectedIndex === 3) sorted.sort((a, b) => getPrice(b) - getPrice(a));
-    if (sortSelect.selectedIndex === 1) sorted.sort((a, b) => getRating(b) - getRating(a));
-    sorted.forEach((card) => grid.appendChild(card));
-  });
-
-  document.querySelector(".explore-btn")?.addEventListener("click", () => {
-    window.location.href = "tours.html";
-  });
-
-  updateCounts();
 });
