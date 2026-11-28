@@ -74,7 +74,8 @@ function displayTour(tour) {
     displayItinerary(tour);
     displayIncludedExcluded(tour);
     setupTravelDate();
-    setupWishlist(tour);
+setupWishlist(tour);
+setupBooking(tour);
 }
 
 // Wishlist Functionality
@@ -277,5 +278,28 @@ function setupTravelDate() {
         } else {
             selectedDate.textContent = "";
         }
+    });
+}
+// Booking Navigation
+function setupBooking(tour) {
+    const bookingButton = document.querySelector(".btn-book-now");
+
+    if (!bookingButton) return;
+
+    bookingButton.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        if (!travelDate || !travelDate.value) {
+            alert("Please select your travel date before booking.");
+            travelDate.focus();
+            return;
+        }
+
+        const params = new URLSearchParams();
+
+        params.set("id", tour.id);
+        params.set("date", travelDate.value);
+
+        window.location.href = "booking.html?" + params.toString();
     });
 }
