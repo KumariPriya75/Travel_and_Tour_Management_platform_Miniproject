@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | TravelGo</title>
+
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container">
+
+        <a href="index.html" class="logo">TravelGo</a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <div class="mobile-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+    <a href="wishlist.html">
+        <i class="fa-regular fa-heart"></i>
+    </a>
+    <a href="profile.html" class="active">
+        <i class="fa-regular fa-user"></i>
+    </a>
+</div>
+            
+        </div>
+
+    </div>
+</nav>
+
+    <!-- MAIN PROFILE -->
+
+    <main class="profile-container">
+
+        <section class="profile-heading">
+            <div class="section-label">YOUR ACCOUNT</div>
+            <h1>My Profile</h1>
+            <p>Manage your personal information and travel preferences.</p>
+        </section>
+
+        <section class="profile-layout">
+
+            <!-- LEFT SIDEBAR -->
+
+            <aside class="profile-sidebar">
+
+                <div class="profile-top"></div>
+
+                <div class="profile-main">
+
+                    <div class="avatar">KB</div>
+
+                    <div class="avatar-controls" hidden>
+                        <label class="change-avatar" for="profile-picture">
+                            Change profile picture
+                        </label>
+
+                        <input
+                            class="avatar-file-input"
+                            id="profile-picture"
+                            type="file"
+                            accept="image/jpeg,image/png,image/webp,image/gif">
+                    </div>
+
+                    <h2>Krishna Bansal</h2>
+
+                    <div class="traveller">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Travel Explorer
+                    </div>
+
+                    <div class="profile-email">
+                        krishna@example.com
+                    </div>
+
+                    <button type="button" class="edit-profile">
+                        Edit Profile
+                    </button>
+
+                    <button type="button" class="logout-btn" id="logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </button>
+
+                </div>
+            </aside>
+
+            <!-- RIGHT CONTENT -->
+
+            <div class="profile-content-area">
+
+                <!-- PERSONAL INFORMATION -->
+
+                <section class="profile-card-box">
+
+                    <div class="box-heading">
+
+                        <div>
+                            <p>PERSONAL DETAILS</p>
+                            <h2>Personal Information</h2>
+                        </div>
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="information-grid">
+
+                        <div class="information">
+                            <span>FULL NAME</span>
+                            <strong>Krishna Bansal</strong>
+                        </div>
+
+                        <div class="information">
+                            <span>EMAIL</span>
+                            <strong>krishna@example.com</strong>
+                        </div>
+
+                        <div class="information">
+                            <span>PHONE</span>
+                            <strong>+91 98765 43210</strong>
+                        </div>
+
+                        <div class="information">
+                            <span>LOCATION</span>
+                            <strong>India</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- TRAVEL PREFERENCES -->
+
+                <section class="profile-card-box">
+
+                    <div class="box-heading">
+
+                        <div>
+                            <p>TRAVEL STYLE</p>
+                            <h2>My Preferences</h2>
+                        </div>
+
+                        <button type="button" class="preference-edit-btn" id="edit-preferences">
+                            <i class="fa-solid fa-pen"></i>
+                            Edit
+                        </button>
+
+                    </div>
+
+                    <p class="preference-description" id="preference-message">
+                        Choose the type of trips you enjoy.
+                    </p>
+
+                    <div class="preference-list" id="preference-list">
+
+                        <button type="button" class="preference" data-value="Adventure">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                            <strong>Adventure</strong>
+                        </button>
+
+                        <button type="button" class="preference" data-value="Beaches">
+                            <i class="fa-solid fa-umbrella-beach"></i>
+                            <strong>Beaches</strong>
+                        </button>
+
+                        <button type="button" class="preference" data-value="Culture">
+                            <i class="fa-solid fa-landmark"></i>
+                            <strong>Culture</strong>
+                        </button>
+
+                        <button type="button" class="preference" data-value="Nature">
+                            <i class="fa-solid fa-leaf"></i>
+                            <strong>Nature</strong>
+                        </button>
+
+                        <button type="button" class="preference" data-value="Religious">
+                            <i class="fa-solid fa-place-of-worship"></i>
+                            <strong>Religious</strong>
+                        </button>
+
+                        <button type="button" class="preference" data-value="City Trips">
+                            <i class="fa-solid fa-city"></i>
+                            <strong>City Trips</strong>
+                        </button>
+
+                    </div>
+
+                    <div class="preference-actions" id="preference-actions" hidden>
+
+                        <button type="button" id="save-preferences">
+                            Save Preferences
+                        </button>
+
+                        <button type="button" id="cancel-preferences">
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <!-- ACCOUNT SETTINGS -->
+
+                <section class="profile-card-box">
+
+                    <div class="box-heading">
+
+                        <div>
+                            <p>SETTINGS</p>
+                            <h2>Account Settings</h2>
+                        </div>
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="account-option">
+
+                        <div class="option-left">
+
+                            <div class="option-icon">
+                                <i class="fa-solid fa-lock"></i>
+                            </div>
+
+                            <div>
+                                <strong>Password & Security</strong>
+                                <span>Change your account password</span>
+                            </div>
+
+                        </div>
+
+                        <a href="#" aria-label="Password and Security">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="account-option">
+
+                        <div class="option-left">
+
+                            <div class="option-icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+
+                            <div>
+                                <strong>Notifications</strong>
+                                <span>Manage notification preferences</span>
+                            </div>
+
+                        </div>
+
+                        <a href="#" aria-label="Notifications">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../Js/profile.js"></script>
+    <script src="../Js/preferences.js"></script>
+
+</body>
+</html>

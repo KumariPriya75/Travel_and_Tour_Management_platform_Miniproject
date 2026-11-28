@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist | TravelGo</title>
+
+    <link rel="stylesheet" href="../css/wishlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container">
+
+        <a href="index.html" class="logo">TravelGo</a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <div class="mobile-menu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html">Tours</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-icons">
+                <a href="wishlist.html" class="active">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+                <a href="profile.html">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+    <main class="wishlist-container">
+
+        <section class="wishlist-heading">
+            <div>
+                <div class="section-label">YOUR SAVED TRIPS</div>
+                <h1>My <span>Wishlist</span></h1>
+                <p>Keep your favourite destinations in one place.</p>
+            </div>
+
+            <button class="explore-btn" type="button">
+                Explore More
+            </button>
+        </section>
+
+        <section class="wishlist-layout">
+
+            <aside class="wishlist-sidebar">
+                <h3>Wishlist Summary</h3>
+
+                <div class="summary-box">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div>
+                        <span>Saved Places</span>
+                        <strong id="summary-count">00</strong>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="wishlist-content">
+
+                <div class="wishlist-top">
+                    <span id="wishlist-count">0 trips saved</span>
+
+                    <select id="wishlist-sort">
+                        <option value="default">Sort by</option>
+                        <option value="popular">Popular</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                    </select>
+                </div>
+
+                <div class="wishlist-grid" id="wishlist-grid"></div>
+
+                <p id="empty-wishlist" style="display: none; text-align: center; padding: 35px 10px;">
+                    Your wishlist is empty. Explore tours and add your favourites!
+                </p>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/wishlist.js"></script>
+
+</body>
+</html>
